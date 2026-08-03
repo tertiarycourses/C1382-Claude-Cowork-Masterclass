@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+~$*
+*.tmp
+*.bak
+.lo-*/
+.courseware-render.*/
+.qa-render/
+courseware/*.png

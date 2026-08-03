@@ -1,0 +1,6 @@
+week,location,orders,fulfilled_on_time,revenue_sgd,returns,labour_hours
+32,Orchard,420,395,75600,18,630
+32,Jurong,365,330,58400,27,570
+32,Tampines,390,371,66300,15,598
+32,Woodlands,315,275,47250,31,515
+32,Online,510,485,91800,22,420

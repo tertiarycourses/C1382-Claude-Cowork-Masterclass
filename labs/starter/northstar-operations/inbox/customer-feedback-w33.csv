@@ -1,0 +1,11 @@
+feedback_id,week,channel,location,category,sentiment,resolution_hours,comment
+F3301,33,Email,Woodlands,delayed_delivery,negative,14,"Delivery was later than the revised estimate."
+F3302,33,Web,Jurong,order_status,negative,9,"Tracking showed processing after the parcel arrived."
+F3303,33,Web,Online,returns_process,neutral,8,"Return was completed but the first step was not obvious."
+F3304,33,In store,Orchard,staff_helpfulness,positive,1,"Staff suggested a suitable replacement immediately."
+F3305,33,Email,Woodlands,product_availability,negative,20,"A promoted colour was unavailable."
+F3306,33,Web,Tampines,packaging,positive,3,"Protective packaging was neat and recyclable."
+F3307,33,Web,Online,delivery_speed,positive,2,"Delivery arrived within the selected window."
+F3308,33,Phone,Jurong,delayed_delivery,negative,12,"The promised update required a follow-up call."
+F3309,33,Email,Tampines,product_quality,positive,4,"Replacement unit worked well."
+F3310,33,In store,Orchard,checkout_speed,positive,1,"Queue moved quickly during the promotion."
