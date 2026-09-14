@@ -1,0 +1,3 @@
+# Schedule the report and send the completed Excel via Outlook
+Work only in this synthetic finance lab folder. Create a repeatable September run and controlled Outlook attachment flow. Source: mock-data/*.xlsx. Use the finance-control skill. Produce the exact outputs named in the instruction. Never edit mock-data. Inventory source rows and show exclusions. Pause before any email, connector write, scheduled task activation or move to Approved Reports. Report the formula references and checks, not just a narrative conclusion.
+New period September. Draft a scheduled weekly Monday task but leave it on-demand for testing. Delivery must use an approved workbook and an authorised test recipient.

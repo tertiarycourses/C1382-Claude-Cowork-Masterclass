@@ -1,0 +1,2 @@
+# Create the finance Cowork project
+Work only in this synthetic finance lab folder. Create a scoped Cowork project and a source inventory. Source: mock-data/*.xlsx. Use the finance-control skill. Produce the exact outputs named in the instruction. Never edit mock-data. Inventory source rows and show exclusions. Pause before any email, connector write, scheduled task activation or move to Approved Reports. Report the formula references and checks, not just a narrative conclusion.

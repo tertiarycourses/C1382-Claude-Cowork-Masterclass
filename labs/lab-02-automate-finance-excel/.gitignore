@@ -1,0 +1,4 @@
+working/*
+!working/README.txt
+outputs/*
+!outputs/README.txt
