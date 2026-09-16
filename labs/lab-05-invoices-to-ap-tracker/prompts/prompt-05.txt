@@ -1,5 +1,0 @@
-# Lab 05: Extract Invoice Details into an AP Tracker
-
-Read all mock invoices in mock-data/invoices. Extract invoice number, supplier, invoice date, due date, currency, subtotal, tax and total into a copy of mock-data/AP-tracker-template.xlsx. Save outputs/AP-tracker.xlsx. Flag duplicates, missing fields and totals that do not reconcile. Never guess a missing value; write REVIEW REQUIRED. Do not rename or edit the invoices.
-
-Before finishing, use CHECKLIST.md and list each check as complete or needs review.

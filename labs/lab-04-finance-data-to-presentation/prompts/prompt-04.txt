@@ -1,5 +1,0 @@
-# Lab 04: Turn Finance Data into a Management Presentation
-
-Read mock-data/quarterly-performance.xlsx and mock-data/manager-brief.md. Create outputs/Q3-finance-management-update.pptx with exactly five slides: title, KPI snapshot, revenue and expense trend, budget variance story, and next actions. Use the company palette in brand-guide.md. Use editable charts, one main message per slide and plain language. Cite the workbook sheet and cell range in speaker notes or a small source footer. Do not add numbers not present in the workbook.
-
-Before finishing, use CHECKLIST.md and list each check as complete or needs review.

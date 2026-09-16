@@ -1,5 +1,0 @@
-# Lab 02: Pull the Latest Finance Data and Refresh Excel
-
-Inspect mock-data/incoming and choose the newest file by the YYYY-MM filename, not by guesswork. Copy mock-data/monthly-finance-dashboard-template.xlsx to outputs/monthly-finance-dashboard.xlsx. Replace the Data sheet rows with the newest file, update the Dashboard formulas, and refresh the revenue trend and expense category charts. Add the source filename and refresh date to the Control sheet. Keep the incoming files unchanged. Save a short refresh-log.md.
-
-Before finishing, use CHECKLIST.md and list each check as complete or needs review.

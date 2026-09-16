@@ -1,5 +1,0 @@
-# Lab 08: Schedule a Weekly Finance Briefing
-
-Prepare a weekly finance briefing workflow using the files in this lab. The Cowork task must find the newest approved workbook in the connected cloud folder, verify the release checklist, create a three-point summary, and stop if approval is missing. Draft the schedule for Monday 09:00 Asia/Singapore but keep it on-demand for the lab. For attachment delivery, document the OneDrive Approved Reports trigger, Get file content, and Outlook Send an email (V2) attachment fields. Do not activate the schedule or send email.
-
-Before finishing, use CHECKLIST.md and list each check as complete or needs review.

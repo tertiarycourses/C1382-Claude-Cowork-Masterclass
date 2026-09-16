@@ -1,5 +1,0 @@
-# Lab 06: Create Budget-vs-Actual Commentary
-
-Open mock-data/budget-vs-actual.xlsx. Create outputs/variance-review.xlsx with variance amount and variance percentage formulas. Highlight items where absolute variance is at least S$5,000 or 10%. Write outputs/management-commentary.md with the three largest adverse variances, one favourable variance, likely business drivers from mock-data/department-notes.md, and questions for owners. Label assumptions clearly and do not present them as facts.
-
-Before finishing, use CHECKLIST.md and list each check as complete or needs review.

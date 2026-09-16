@@ -1,3 +1,0 @@
-Opening cash balance: SGD 76000
-Minimum buffer: SGD 50000
-Start date: 2026-09-16

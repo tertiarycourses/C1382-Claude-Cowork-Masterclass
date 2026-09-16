@@ -1,57 +1,65 @@
 # Claude Cowork Masterclass
 
-Use Claude Cowork to complete eight practical finance tasks: organise a project, refresh Excel, research current news, turn data into slides, process invoices, explain variances, monitor cash flow, and prepare a controlled weekly briefing.
+Build a live sales dashboard in Claude Cowork, connect it to your finance data in Google Drive and Gmail, automate the morning routine as a reusable skill, and gather it all into one Claude Project your team can work from.
 
 | Course detail | Information |
 |---|---|
 | Course code | `C1382` |
 | Programme | Non-WSQ |
-| Duration | One day; 7.5 instructional hours plus tea breaks |
+| Duration | One day; 9:00am – 6:00pm |
 | Registration | [View course details and register](https://www.tertiarycourses.com.sg/claude-cowork-masterclass.html) |
-| Courseware | Version 2.1, 16 September 2026 |
+| Courseware | Version 3.0, 16 September 2026 |
 
 ## About the course
 
-The course is designed for business and finance users. It uses fictional Singapore-dollar data and ready-to-paste prompts, so learners can focus on the work they want completed rather than code. Every scenario includes a human check before a file is used, sent, published, or scheduled.
+The course is designed for business and finance users — no coding required. Everything is taught through one continuous scenario: you are on the finance team at **Meridian Capital Partners Pte Ltd**, a fictitious Singapore investment and advisory firm. Each lab extends the work of the one before it, so by the end of the day you have a single, coherent working setup rather than six disconnected exercises.
 
-## Learning outcomes
-
-- Create a reusable Cowork project with one task folder and clear instructions.
-- Select the latest finance data and refresh Excel KPIs and visualisations.
-- Research recent AI-in-finance developments and compile a sourced Excel tracker.
-- Turn finance workbooks and invoice documents into useful business outputs.
-- Draft variance explanations, cash alerts, and a weekly briefing with approval controls.
-- Rehearse an Outlook attachment workflow while keeping the schedule and delivery under human approval.
+Every prompt is supplied ready to paste, in the slides, the Learner Guide and the lab files. All company data, figures and documents are synthetic.
 
 ## Three topics
 
-1. **Set up and refresh:** create the Cowork project and update an Excel dashboard from the newest file.
-2. **Research and present:** research current AI-in-finance news and turn finance data into a management presentation.
-3. **Monitor and deliver:** process invoices, explain variances, watch cash flow, and prepare a scheduled finance briefing.
+1. **Claude Cowork Fundamentals** — where Cowork sits in the Claude product family, setting it up, and building, saving and downloading Live Artefacts.
+2. **Tools and Skills** — the Google Drive and Gmail connectors, and capturing a multi-tool routine as a reusable `/daily-brief` Agent Skill.
+3. **Claude Projects** — assembling the data, instructions, skill and dashboard into one folder-backed workspace to share with the team.
 
-## Eight self-contained labs
+## Learning outcomes
 
-Every [lab folder](labs/README.md) includes mock data, a reusable Cowork skill, tools guide, prompt text and PDF, detailed instructions, expected evidence, and a checklist.
+- Set up Claude and the Cowork desktop workspace, and explain where Cowork fits in the Claude product family.
+- Build, save and download a Live Artefact, including an interactive sales dashboard from supplied data.
+- Connect the Google Drive connector so Claude can read finance data held outside the chat.
+- Refresh a Live Artefact from connected data and send an approved summary with the Gmail connector.
+- Write an Agent Skill that runs a repeatable routine across your connected tools on one command.
+- Assemble a Claude Project that holds the data, instructions, skill and dashboard as one reusable team workspace.
 
-1. [Create a Cowork Project](labs/lab-01-create-cowork-project/INSTRUCTIONS.md)
-2. [Refresh an Excel Dashboard](labs/lab-02-refresh-excel-dashboard/INSTRUCTIONS.md)
-3. [Research AI-in-Finance News](labs/lab-03-research-ai-finance-news/INSTRUCTIONS.md)
-4. [Turn Finance Data into Slides](labs/lab-04-finance-data-to-presentation/INSTRUCTIONS.md)
-5. [Build an AP Tracker from Invoices](labs/lab-05-invoices-to-ap-tracker/INSTRUCTIONS.md)
-6. [Write Budget Variance Commentary](labs/lab-06-budget-variance-commentary/INSTRUCTIONS.md)
-7. [Build a Cash-Flow Watchlist](labs/lab-07-cashflow-watchlist/INSTRUCTIONS.md)
-8. [Schedule a Weekly Finance Briefing](labs/lab-08-schedule-weekly-finance-briefing/INSTRUCTIONS.md)
+## Six labs, one continuous build
+
+Every [lab folder](labs/README.md) has instructions in Markdown **and** PDF, the prompt on its own, a tools guide, a checklist, and mock data where the lab needs it.
+
+| Lab | Topic | Title |
+|---|---|---|
+| 01 | 1 | [Your First Live Artefact](labs/lab-01-first-live-artefact/INSTRUCTIONS.md) |
+| 02 | 1 | [The Meridian Sales Dashboard](labs/lab-02-sales-dashboard-live-artefact/INSTRUCTIONS.md) |
+| 03 | 2 | [Connect Google Drive](labs/lab-03-connect-google-drive/INSTRUCTIONS.md) |
+| 04 | 2 | [Refresh the Dashboard and Send the Summary](labs/lab-04-gmail-summary-delivery/INSTRUCTIONS.md) |
+| 05 | 2 | [Build a /daily-brief Skill](labs/lab-05-daily-brief-skill/INSTRUCTIONS.md) |
+| 06 | 3 | [Build the Meridian Claude Project](labs/lab-06-meridian-claude-project/INSTRUCTIONS.md) |
 
 ## Courseware
 
 - [Learner Guide](LG-Claude%20Cowork%20Masterclass.md)
-- [PowerPoint deck](courseware/Claude%20Cowork%20Masterclass-v2.1.pptx)
-- [Slide PDF](courseware/Claude%20Cowork%20Masterclass-v2.1.pdf)
+- [PowerPoint deck](courseware/Claude%20Cowork%20Masterclass-v3.0.pptx)
+- [Slide PDF](courseware/Claude%20Cowork%20Masterclass-v3.0.pdf)
 - [Learner Guide PDF](courseware/LG-Claude%20Cowork%20Masterclass.pdf)
 - [Lesson Plan PDF](courseware/LP-Claude%20Cowork%20Masterclass.pdf)
 
-The Outlook attachment scenario uses an approved OneDrive folder and Power Automate to get the workbook content and create the Outlook message. The learner exercise uses a test recipient and leaves the schedule disabled. All names, financial records, invoices, recipients, and figures are synthetic.
+## Requirements
 
-This public repository contains only learner-facing courseware and lab resources. Superseded versions, build scripts, source imagery, QA renders, references, credentials, and trainer-private material remain outside the public release.
+A laptop with the Claude desktop app (Mac or Windows) and a Claude account on a paid plan — Cowork and Live Artefacts are paid-plan desktop features. A Google account is needed for the connector labs.
+
+## Working safely
+
+Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient. Claude drafts and builds; you check the figures and approve before anything is sent.
+
+This public repository contains only learner-facing courseware and lab resources. Superseded versions, build scripts, QA renders and trainer-private material remain outside the public release.
 
 Provider: Tertiary Infotech Academy Pte Ltd / [Tertiary Courses](https://www.tertiarycourses.com.sg/claude-cowork-masterclass.html).

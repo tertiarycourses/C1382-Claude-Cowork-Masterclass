@@ -1,12 +1,29 @@
-# C1382 — Claude Cowork task-automation labs
+# Claude Cowork Masterclass — Labs
 
-Eight independent finance scenarios. Every folder contains mock data, a reusable Cowork skill, tools guide, ready-to-paste prompts in text and PDF, detailed instructions, expected output or control evidence, and working/output folders.
+Meridian Capital Partners is a fictitious Singapore-based investment and advisory firm with four revenue desks — Advisory, Asset Management, Private Credit and Corporate Finance. All figures, clients, staff and documents in this course are synthetic and used for training only.
 
-1. [Create a Cowork Project for Finance Tasks](lab-01-create-cowork-project/INSTRUCTIONS.md) — 35 min
-2. [Pull the Latest Finance Data and Refresh Excel](lab-02-refresh-excel-dashboard/INSTRUCTIONS.md) — 55 min
-3. [Research the Latest AI-in-Finance News into Excel](lab-03-research-ai-finance-news/INSTRUCTIONS.md) — 50 min
-4. [Turn Finance Data into a Management Presentation](lab-04-finance-data-to-presentation/INSTRUCTIONS.md) — 55 min
-5. [Extract Invoice Details into an AP Tracker](lab-05-invoices-to-ap-tracker/INSTRUCTIONS.md) — 45 min
-6. [Create Budget-vs-Actual Commentary](lab-06-budget-variance-commentary/INSTRUCTIONS.md) — 45 min
-7. [Build a Cash-Flow Watchlist and Email Draft](lab-07-cashflow-watchlist/INSTRUCTIONS.md) — 45 min
-8. [Schedule a Weekly Finance Briefing](lab-08-schedule-weekly-finance-briefing/INSTRUCTIONS.md) — 45 min
+Six labs, one continuous build. Lab 01 creates your first Live
+Artefact; every lab after it extends the same scenario, so work through them in
+order.
+
+| Lab | Topic | Title | You build |
+|---|---|---|---|
+| 01 | 01 Claude Cowork Fundamentals | [Your First Live Artefact](lab-01-first-live-artefact/INSTRUCTIONS.md) | A saved, downloaded Live Artefact — a working Meridian FX converter. |
+| 02 | 01 Claude Cowork Fundamentals | [The Meridian Sales Dashboard](lab-02-sales-dashboard-live-artefact/INSTRUCTIONS.md) | A saved Live Artefact dashboard showing Meridian's FY2026 revenue by desk. |
+| 03 | 02 Tools and Skills | [Connect Google Drive](lab-03-connect-google-drive/INSTRUCTIONS.md) | A working Google Drive connection scoped to the Meridian finance folder. |
+| 04 | 02 Tools and Skills | [Refresh the Dashboard and Send the Summary](lab-04-gmail-summary-delivery/INSTRUCTIONS.md) | An updated dashboard plus an approved quarterly summary email sent to yourself. |
+| 05 | 02 Tools and Skills | [Build a /daily-brief Skill](lab-05-daily-brief-skill/INSTRUCTIONS.md) | A daily-brief Agent Skill you can run by name each morning. |
+| 06 | 03 Claude Projects | [Build the Meridian Claude Project](lab-06-meridian-claude-project/INSTRUCTIONS.md) | A Meridian Finance Reporting project holding the data, instructions, skill and dashboard. |
+
+## What each lab folder holds
+
+- `INSTRUCTIONS.md` — goal, prompt, numbered steps and the check step.
+- `PROMPT.md` — the ready-to-paste prompt on its own.
+- `TOOLS.md` — which tools and connectors the lab needs.
+- `CHECKLIST.md` — tick off each step as you go.
+- `mock-data/` — the synthetic Meridian files the lab uses (where applicable).
+- `outputs/` — save your finished work here.
+
+## Ground rules
+
+Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient.
