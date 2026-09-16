@@ -1,361 +1,721 @@
 # Learner Guide — Claude Cowork Masterclass (C1382)
 
-v2.0 · 15 September 2026 · One day, 7.5 instructional hours
+
+
+v2.1 · 16 September 2026 · One day · 7.5 instructional hours
 
 
 
 # Document Version Control Record
 
-# Purpose and setup
+# How to use this guide
 
-You will work with fictional Singapore-dollar transactions to build a finance Cowork project, a reconciled Excel workbook and a scheduled Outlook attachment path. Use only the provided mock data. Claude Cowork, Excel or an Excel-compatible viewer, and an active paid Claude account are needed. Lab 3 additionally requires an authorised work Microsoft 365 account, connector write permission and Power Automate.
+Work through the labs in order or choose a scenario that matches your job. Each lab folder is independent: it has mock data, a Cowork skill, a tools guide, ready-to-paste prompts, detailed instructions, expected evidence and a checklist. Keep mock-data unchanged and save finished work in outputs/.
 
-Current product constraint: the native Microsoft 365 connector can send Outlook mail but cannot attach a file. The attachment path in Lab 3 uses OneDrive for Business and Power Automate. Cloud schedules use connected files; a scheduled task that requires local files or apps runs locally.
+# Set up Claude Cowork
 
-# Detailed setup and working sequence
+Open Claude and choose Cowork. A paid plan is required.
 
-## Create the finance project
+For local files, use Claude Desktop and keep it open while the task uses your computer.
 
-Open Claude Desktop, select Cowork, and create Finance Month-End Lab under Projects. Choose only the lab folder as context; do not select a parent finance drive.
+Create a project or session from only the lab folder you are using.
 
-Open the project instructions and paste the finance-control skill rules. Record the folder name, source filename, output path and review owner in the first task.
+Open TOOLS.md and enable only the tools needed for the task.
 
-Ask for a read-only inventory. Confirm 14 rows, seven columns, duplicate BILL-012 and Pending INV-013 before any workbook transformation.
+Add the lab SKILL.md as project instructions or an enabled custom skill.
 
-## Build and inspect the Excel workbook
+Review the proposed plan before allowing file changes or connected-app actions.
 
-Make a working copy of finance-aug-2026.xlsx. Require four sheets named Raw, Eligible, Summary and Exceptions. Raw keeps the original 14 records unchanged.
+# The simple task pattern
 
-Eligible includes only Approved records and the first occurrence of each Document ID within the period. Exceptions contains the later BILL-012 and Pending INV-013 with source row numbers and reasons.
+Every automation follows five questions: What outcome is needed? Which inputs may Cowork use? What file should it create? How will you verify it? Which actions require human approval?
 
-In Summary, use Excel formulas that point to Eligible. Revenue is the sum of positive eligible amounts, expenses are the absolute value of negative eligible amounts, and net equals revenue minus expenses.
+# Use Case 01 — Create a Cowork Project
 
-Open the finished file in Excel, force recalculation, and inspect both formulas and displayed values. Compare S$46,700 revenue, S$16,500 expenses and S$30,200 net with the independent control file. Stop on any mismatch.
+Scenario: Files and instructions live in different places. Ask Cowork to give cowork one project, one folder and clear rules. The result is a reusable workspace for every finance task.
 
-## Schedule and deliver through Outlook
+## What goes in
 
-Run the September prompt on demand before creating a cadence. Verify S$48,100 revenue, S$16,960 expenses, S$31,140 net, 12 eligible rows and two exceptions.
+Project brief
 
-For a cloud Cowork schedule, move the source into authorised OneDrive for Business or SharePoint context. Use Scheduled > New task; set the weekly Monday 09:00 Asia/Singapore cadence, gated on a new approved month input only after the on-demand rehearsal. A local-folder task runs locally and needs the desktop available.
+Close checklist
 
-Connect Microsoft 365 through Customize > Connectors using a work account. The tenant administrator must have granted consent and enabled email write tools. The native connector may send a reviewed link, but cannot attach the Excel file.
+Dedicated lab folder
 
-For an attachment, configure Power Automate: OneDrive for Business When a file is created on Approved Reports, restrict the trigger to finance-report-*.xlsx, Get file content, then Office 365 Outlook Send an email (V2) with the file name and content in its attachment fields.
+## What Cowork does
 
-Only move a human-reviewed final workbook to Approved Reports. Verify the flow run, Sent Items, received attachment name, openable workbook and totals. Keep the task manual until the organisation approves the cadence and recipient.
+Create project
 
-# Topic 01 — Finance Cowork project and controls
+Connect one folder
 
-## Project scope
+Add finance skill
 
-Mechanism: Finance Month-End Lab → synthetic August folder → outputs only. Worked finance evidence: 14 source rows; 7 columns; one duplicate ID. Review decision: Reject a plan that names a broader drive.
+## Skills and tools
 
-## Folder boundary
+Cowork Projects
 
-Mechanism: mock-data read-only → working copy → outputs. Worked finance evidence: Source SHA-256 unchanged after run. Review decision: Stop if a raw cell changes.
+Local folder access
 
-## Project instructions
+Project instructions
 
-Mechanism: Period + currency + eligibility rule + stop rule. Worked finance evidence: Approved, unique Document ID, SGD. Review decision: Project rule outranks a vague task phrase.
+## Human check
 
-## Task contract
+File map lists every source; originals stay unchanged
 
-Mechanism: Outcome + source + output + review gate. Worked finance evidence: Finance report August 2026, no email. Review decision: No recipient or publish action in first run.
+## Lab 01 — step-by-step
 
-## Source schema
+C1382 · Topic 1 · 35 minutes
 
-Mechanism: Date | Document ID | Counterparty | Category | Amount | Currency | Status. Worked finance evidence: 14 rows × 7 fields in the workbook. Review decision: Unknown currency or blank ID becomes exception.
+### Goal
 
-## Approval field
+Create a simple Cowork project with a dedicated finance folder, clear instructions and safe output locations.
 
-Mechanism: Approved is eligible; Pending is held. Worked finance evidence: INV-013 is Pending +S$2,200. Review decision: Do not include pending revenue.
+### What you will build
 
-## Duplicate key
+A reusable Finance Task Automation project with folder instructions and a first file inventory.
 
-Mechanism: Document ID is business key within period. Worked finance evidence: BILL-012 occurs twice at -S$1,020. Review decision: Keep first; log second occurrence.
+### Prerequisites
 
-## Provenance
+Open this lab folder as the Cowork project context. Read TOOLS.md, enable the named skill in skill/finance-project-organiser/SKILL.md, and use only the fictional files in mock-data/.
 
-Mechanism: Every output metric links to named source rows. Worked finance evidence: Revenue source: six approved invoices. Review decision: A narrative without row links is not evidence.
+### Steps
 
-## Permission gate
+Open `TOOLS.md` and confirm the available tools and access boundary.
 
-Mechanism: Read workbook; write only working and outputs. Worked finance evidence: No change to mock-data hash. Review decision: Decline connector or email permission here.
+Review the files in `mock-data/`; copy any file you will change into `working/`.
 
-## Prompt injection
+Add or enable `skill/finance-project-organiser/SKILL.md` in the Cowork project.
 
-Mechanism: Workbook text is data, never new instructions. Worked finance evidence: Counterparty cell cannot authorize a send. Review decision: Treat embedded instructions as untrusted data.
+Open `prompts/prompt-01.txt`, paste the prompt into Cowork and review its proposed plan.
 
-## Plan review
+Allow only the reads and writes needed for this lab. Keep consequential actions paused.
 
-Mechanism: Inspect files, operations and side effects. Worked finance evidence: Expected: read one .xlsx, write one manifest. Review decision: Pause if browser or mailbox appears in plan.
+Open the generated files and compare them with `CHECKLIST.md`. Correct any mismatch in the output, then repeat the check.
 
-## Inventory check
+Save the finished artifacts in `outputs/` and record the evidence used.
 
-Mechanism: Source count → duplicate count → pending count. Worked finance evidence: 14 = 12 eligible + 2 excluded. Review decision: Mismatch blocks Lab 2.
+### Test it
 
-# Topic 02 — Automate and reconcile Excel
+The project shows the correct folder, the file map lists every mock-data file, and no source file changed.
 
-## Raw sheet
+### Troubleshooting
 
-Mechanism: Copy all 14 rows with original column order. Worked finance evidence: Raw!A1:G15 retained. Review decision: Never normalize away exception evidence.
+**Cowork selects the wrong file:** name the expected date format and require it to list candidates before choosing.
 
-## Eligible sheet
+**A workbook does not refresh:** open it in Excel, recalculate, and ask Cowork to inspect formulas and chart source ranges.
 
-Mechanism: Approved ∧ first occurrence of Document ID. Worked finance evidence: 12 eligible rows, 6 revenue + 6 expense. Review decision: Filter criteria must be visible.
+**A claim has no source:** remove it or add a direct file, cell or URL reference.
 
-## Exceptions sheet
+### Challenge
 
-Mechanism: Record excluded row, reason, source address. Worked finance evidence: BILL-012 repeat; INV-013 pending. Review decision: No silent row deletion.
+Change the reporting period or audience and rerun the task without changing the skill's stable rules.
 
-## Revenue formula
+### Reflection
 
-Mechanism: SUMIFS eligible positive Amount SGD. Worked finance evidence: S$46,700 from six invoices. Review decision: Compare formula result to independent total.
+Which part of this task should always remain a human review point?
 
-## Expense formula
+# Use Case 02 — Refresh an Excel Dashboard
 
-Mechanism: ABS(SUMIFS eligible negative Amount SGD)). Worked finance evidence: S$16,500 from six bills. Review decision: Check sign convention before net.
+Scenario: The dashboard shows last month’s figures. Ask Cowork to find the newest dated file and refresh the workbook. The result is current kpis and charts in one excel file.
 
-## Net formula
+## What goes in
 
-Mechanism: Revenue minus absolute expenses. Worked finance evidence: S$46,700 − S$16,500 = S$30,200. Review decision: Net must equal SUM eligible amounts.
+Three dated CSV files
 
-## Count control
+Dashboard template
 
-Mechanism: COUNTA eligible Document ID range. Worked finance evidence: 12 eligible; 14 source rows. Review decision: Count drift signals a dropped row.
+Expected KPI check
 
-## Status control
+## What Cowork does
 
-Mechanism: Only exact Approved values qualify. Worked finance evidence: Pending INV-013 excluded. Review decision: Whitespace or case variants require review.
+Find latest file
 
-## ID control
+Update Data sheet
 
-Mechanism: Unique ID within month, not across all time. Worked finance evidence: Duplicate BILL-012 adds no expense. Review decision: A second month may reuse an ID.
+Refresh charts
 
-## Formula audit
+## Skills and tools
 
-Mechanism: Inspect formulas, cached values and ranges. Worked finance evidence: Summary points to Eligible, not Raw. Review decision: Hard-coded totals fail repeatability.
+Cowork files
 
-## Workbook chart
+Spreadsheet skill
 
-Mechanism: Revenue / expense / net as editable columns. Worked finance evidence: 46.7k / 16.5k / 30.2k SGD. Review decision: Chart labels must name unit and period.
+Microsoft Excel
 
-## Release check
+## Human check
 
-Mechanism: Control totals + exceptions + protected source. Worked finance evidence: All 5 expected controls match. Review decision: Do not email a mismatched workbook.
+September: revenue S$128k, expenses S$89.5k, net S$38.5k
 
-# Topic 03 — Schedule and deliver via Outlook
-
-## New-period parameter
-
-Mechanism: Switch input period to September 2026. Worked finance evidence: finance-sep-2026.xlsx is independent input. Review decision: Never reuse August output as September.
-
-## September control
-
-Mechanism: Same rules on new transactions. Worked finance evidence: Revenue 48,100; expense 16,960; net 31,140. Review decision: Variance alone is not proof.
-
-## Project schedule
-
-Mechanism: Weekly Monday 09:00 Singapore; new month input gate. Worked finance evidence: Task prompt names input and output cloud folders. Review decision: A local-folder schedule requires desktop.
-
-## Cloud path
-
-Mechanism: OneDrive/SharePoint connector provides source. Worked finance evidence: Approved Reports separate from working folder. Review decision: Cloud job cannot depend on a local-only path.
-
-## On-demand rehearsal
-
-Mechanism: Run schedule once manually first. Worked finance evidence: One workbook, one release manifest. Review decision: Repeated run must not duplicate emails.
-
-## Review manifest
-
-Mechanism: Period + totals + exceptions + reviewer. Worked finance evidence: 12 eligible and 2 excluded in September. Review decision: No approval record, no delivery.
-
-## Outlook connector
-
-Mechanism: Microsoft 365 write permission can send email. Worked finance evidence: Native email includes link, not attachment. Review decision: Attachment requirement needs another route.
-
-## Attachment flow
-
-Mechanism: OneDrive file-created → content → Outlook V2. Worked finance evidence: Approved Reports/finance-report-sep-2026.xlsx. Review decision: Never trigger on working files.
-
-## Flow condition
-
-Mechanism: Filename prefix and .xlsx suffix. Worked finance evidence: finance-report-...xlsx only. Review decision: Other files must cause zero sends.
-
-## Attachment bytes
-
-Mechanism: Get file content feeds ContentBytes. Worked finance evidence: Name equals approved workbook filename. Review decision: Check received attachment opens.
-
-## Idempotency
-
-Mechanism: Unique period filename + no overwrite in trigger. Worked finance evidence: One created file → one flow run → one Sent Item. Review decision: Duplicate send requires stop and investigation.
-
-## Delivery audit
-
-Mechanism: Sent Items + received file + flow history. Worked finance evidence: Subject, recipient, workbook version align. Review decision: A successful Cowork message alone is insufficient.
-
-# Lab 1 — lab-01-finance-cowork-project
+## Lab 02 — step-by-step
 
 C1382 · Topic 1 · 55 minutes
 
-## Goal
+### Goal
 
-Create a scoped Cowork project and a source inventory.
+Find the newest dated finance file, update an Excel dashboard and refresh its charts.
 
-## What you will build
+### What you will build
 
-A bounded finance Cowork workflow and its review evidence. All data is fictional.
+An updated monthly-finance-dashboard.xlsx with current KPIs and two charts.
 
-## Prerequisites
+### Prerequisites
 
-Claude Cowork on a paid plan; Excel or an Excel-compatible viewer; for Lab 3, a work Microsoft 365 account with enabled connector and Power Automate. Earlier labs provide context, but this folder includes its own workbook and instructions.
+Open this lab folder as the Cowork project context. Read TOOLS.md, enable the named skill in skill/latest-finance-dashboard/SKILL.md, and use only the fictional files in mock-data/.
 
-## Steps
+### Steps
 
-1. Open Cowork in Claude Desktop and create a project named Finance Month-End Lab. Select only this lab folder as its local context. If Projects is unavailable, use a Cowork session connected only to this folder and put the same rules in folder instructions.
+Open `TOOLS.md` and confirm the available tools and access boundary.
 
-2. Copy `mock-data/finance-aug-2026.xlsx` to `working/finance-aug-2026.xlsx`. Keep `mock-data/` unchanged.
+Review the files in `mock-data/`; copy any file you will change into `working/`.
 
-3. Add the supplied `skill/finance-control/SKILL.md` as project instructions or an enabled custom skill. Read its stop conditions aloud.
+Add or enable `skill/latest-finance-dashboard/SKILL.md` in the Cowork project.
 
-4. Paste `prompts/01-project-and-inventory.txt` into a Cowork task. Approve read access only to `mock-data/` and write access only to `working/` and `outputs/`.
+Open `prompts/prompt-02.txt`, paste the prompt into Cowork and review its proposed plan.
 
-5. Inspect Claude's file manifest. It must identify 14 data rows plus the header and call out one repeated `BILL-012` and one Pending `INV-013`.
+Allow only the reads and writes needed for this lab. Keep consequential actions paused.
 
-6. Save the manifest in `outputs/source-inventory.md`; compare the input workbook hash before and after the task using `shasum -a 256 mock-data/finance-aug-2026.xlsx`.
+Open the generated files and compare them with `CHECKLIST.md`. Correct any mismatch in the output, then repeat the check.
 
-## Test it
+Save the finished artifacts in `outputs/` and record the evidence used.
 
-The raw workbook hash is unchanged; inventory names all seven columns, 14 rows, one duplicate ID and one pending item.
+### Test it
 
-## Troubleshooting
+The output identifies 2026-09 as latest, displays September revenue S$128,000, expenses S$89,500 and net S$38,500, and contains refreshed charts.
 
-Cowork cannot access the workbook: connect only this lab folder in the desktop project, confirm file permissions, then retry read-only inventory.
+### Troubleshooting
 
-Formula totals disagree: check duplicate-ID and approval filters, recalculate Excel formulas, then compare each eligible row with the source.
+**Cowork selects the wrong file:** name the expected date format and require it to list candidates before choosing.
 
-Outlook delivery is unavailable: verify Microsoft 365 work-account/admin write access. The native connector cannot attach files; use the approved OneDrive link or the Power Automate attachment flow. Do not claim a send occurred without Sent Items and flow history.
+**A workbook does not refresh:** open it in Excel, recalculate, and ask Cowork to inspect formulas and chart source ranges.
 
-## Challenge
+**A claim has no source:** remove it or add a direct file, cell or URL reference.
 
-Add a second approval gate that checks the workbook file name, reviewed period and row counts before moving it to Approved Reports.
+### Challenge
 
-## Reflection
+Change the reporting period or audience and rerun the task without changing the skill's stable rules.
 
-Which control would stop a plausible-looking but incorrect finance report from being emailed?
+### Reflection
 
-# Lab 2 — lab-02-automate-finance-excel
+Which part of this task should always remain a human review point?
 
-C1382 · Topic 2 · 120 minutes
+# Use Case 03 — Research AI-in-Finance News
 
-## Goal
+Scenario: Interesting news is scattered across many websites. Ask Cowork to find six recent, credible developments and cite each source. The result is a structured excel research tracker.
 
-Produce a formula-driven August finance report from mock transactions.
+## What goes in
 
-## What you will build
+Research brief
 
-A bounded finance Cowork workflow and its review evidence. All data is fictional.
+Excel tracker template
 
-## Prerequisites
+Live web sources
 
-Claude Cowork on a paid plan; Excel or an Excel-compatible viewer; for Lab 3, a work Microsoft 365 account with enabled connector and Power Automate. Earlier labs provide context, but this folder includes its own workbook and instructions.
+## What Cowork does
 
-## Steps
+Search recent sources
 
-1. Copy the Lab 1 workbook into this lab's `working/` folder and record the source file name, period and row count in `outputs/reconciliation.md`.
+Check dates and links
 
-2. Open `mock-data/finance-aug-2026.xlsx` in Excel and inspect rows 2–15. Do not delete the duplicate or Pending row in the source.
+Write to Excel
 
-3. Paste `prompts/02-build-reconciled-workbook.txt` into the same Cowork project. Require `outputs/finance-report-aug-2026.xlsx` with `Raw`, `Eligible`, `Summary`, and `Exceptions` sheets.
+## Skills and tools
 
-4. Ask Claude to copy raw rows verbatim. In `Eligible`, include Approved rows with unique Document IDs only. In `Exceptions`, show duplicate `BILL-012` and Pending `INV-013` with reasons. In `Summary`, calculate revenue, expenses, net, count and source count using Excel formulas.
+Cowork web search
 
-5. Before accepting the workbook, independently total the six approved revenue lines and six approved expense lines from the source. Compare with `checks/control-totals.csv`. Open workbook in Excel and recalculate formulas.
+Web fetch
 
-6. Enter discrepancies in `outputs/reconciliation.md` and ask Cowork to fix only the defective cell or rule. Recheck all totals and the two exception rows.
+Spreadsheet skill
 
-7. Export no client data. Keep only the fictional output in `outputs/`.
+## Human check
 
-## Test it
+Six direct links open; every date and summary is sourced
 
-Approved revenue S$46,700; approved expense S$16,500; net S$30,200; 12 eligible rows; two excluded rows. The workbook has formulas and the source is unchanged.
+## Lab 03 — step-by-step
 
-## Troubleshooting
+C1382 · Topic 2 · 50 minutes
 
-Cowork cannot access the workbook: connect only this lab folder in the desktop project, confirm file permissions, then retry read-only inventory.
+### Goal
 
-Formula totals disagree: check duplicate-ID and approval filters, recalculate Excel formulas, then compare each eligible row with the source.
+Research recent AI technology news relevant to finance and compile a sourced Excel tracker.
 
-Outlook delivery is unavailable: verify Microsoft 365 work-account/admin write access. The native connector cannot attach files; use the approved OneDrive link or the Power Automate attachment flow. Do not claim a send occurred without Sent Items and flow history.
+### What you will build
 
-## Challenge
+An AI-finance-news-tracker.xlsx with source, date, summary, finance relevance and follow-up columns.
 
-Add a second approval gate that checks the workbook file name, reviewed period and row counts before moving it to Approved Reports.
+### Prerequisites
 
-## Reflection
+Open this lab folder as the Cowork project context. Read TOOLS.md, enable the named skill in skill/finance-news-researcher/SKILL.md, and use only the fictional files in mock-data/.
 
-Which control would stop a plausible-looking but incorrect finance report from being emailed?
+### Steps
 
-# Lab 3 — lab-03-schedule-and-outlook-delivery
+Open `TOOLS.md` and confirm the available tools and access boundary.
 
-C1382 · Topic 3 · 85 minutes
+Review the files in `mock-data/`; copy any file you will change into `working/`.
 
-## Goal
+Add or enable `skill/finance-news-researcher/SKILL.md` in the Cowork project.
 
-Create a repeatable September run and controlled Outlook attachment flow.
+Open `prompts/prompt-03.txt`, paste the prompt into Cowork and review its proposed plan.
 
-## What you will build
+Allow only the reads and writes needed for this lab. Keep consequential actions paused.
 
-A bounded finance Cowork workflow and its review evidence. All data is fictional.
+Open the generated files and compare them with `CHECKLIST.md`. Correct any mismatch in the output, then repeat the check.
 
-## Prerequisites
+Save the finished artifacts in `outputs/` and record the evidence used.
 
-Claude Cowork on a paid plan; Excel or an Excel-compatible viewer; for Lab 3, a work Microsoft 365 account with enabled connector and Power Automate. Earlier labs provide context, but this folder includes its own workbook and instructions.
+### Test it
 
-## Steps
+The workbook contains six distinct recent items, six direct links that open, dates, concise summaries, and a completed Research Notes sheet.
 
-1. Use `mock-data/finance-sep-2026.xlsx` as a new-period input. Copy it to `working/` and rerun the finance skill with `prompts/03-schedule-and-deliver.txt`; save `outputs/finance-report-sep-2026.xlsx`.
+### Troubleshooting
 
-2. Reconcile the new workbook against `checks/control-totals.csv`; record the file name, period, totals, exception count and review initials in `outputs/release-manifest.csv`.
+**Cowork selects the wrong file:** name the expected date format and require it to list candidates before choosing.
 
-3. For a cloud schedule, place the approved input and output folders in your organisation's OneDrive for Business or SharePoint and give the project exact paths. In Cowork Scheduled, create a weekly Monday task at 09:00 Asia/Singapore that acts only when a new approved month input is present. First set it to manual/on-demand and test. A schedule tied to local files or desktop apps runs locally and requires the desktop available.
+**A workbook does not refresh:** open it in Excel, recalculate, and ask Cowork to inspect formulas and chart source ranges.
 
-4. Connect the Microsoft 365 connector using an authorised work account. The admin must enable email write tools. The native connector cannot attach files, so use it only to draft/send an approved link to the completed workbook if attachment delivery is unavailable.
+**A claim has no source:** remove it or add a direct file, cell or URL reference.
 
-5. To send the actual `.xlsx` attachment automatically, create a Power Automate cloud flow: OneDrive for Business `When a file is created` on a dedicated `Approved Reports` folder → condition filename begins `finance-report-` and ends `.xlsx` → `Get file content` → Office 365 Outlook `Send an email (V2)` to your own authorised test mailbox with the file name and file content as its attachment. The human gate is moving the reconciled final workbook into `Approved Reports`; never trigger from a working folder.
+### Challenge
 
-6. Run once with the synthetic September workbook. Open Sent Items and the received email. Verify attachment name, workbook sheets and totals. Check flow run history for exactly one send; avoid a second copy into the trigger folder.
+Change the reporting period or audience and rerun the task without changing the skill's stable rules.
 
-7. Keep the Cowork task in manual mode after the lab unless your organisation approves the real schedule and recipient. Document the final state in `outputs/delivery-log.md`.
+### Reflection
 
-## Test it
+Which part of this task should always remain a human review point?
 
-September approved revenue S$48,100; approved expense S$16,960; net S$31,140. One approved workbook, one flow run and one Outlook test email with the exact .xlsx attachment.
+# Use Case 04 — Turn Finance Data into Slides
 
-## Troubleshooting
+Scenario: Leaders receive a dense workbook. Ask Cowork to turn the numbers into a five-slide update. The result is clear charts, messages and next actions.
 
-Cowork cannot access the workbook: connect only this lab folder in the desktop project, confirm file permissions, then retry read-only inventory.
+## What goes in
 
-Formula totals disagree: check duplicate-ID and approval filters, recalculate Excel formulas, then compare each eligible row with the source.
+Quarterly workbook
 
-Outlook delivery is unavailable: verify Microsoft 365 work-account/admin write access. The native connector cannot attach files; use the approved OneDrive link or the Power Automate attachment flow. Do not claim a send occurred without Sent Items and flow history.
+Manager brief
 
-## Challenge
+Brand guide
 
-Add a second approval gate that checks the workbook file name, reviewed period and row counts before moving it to Approved Reports.
+## What Cowork does
 
-## Reflection
+Read the brief
 
-Which control would stop a plausible-looking but incorrect finance report from being emailed?
+Choose the story
 
-# Reference and product verification
+Build editable slides
 
-Anthropic Claude Cowork Help: https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork
+## Skills and tools
 
-Anthropic schedule documentation: https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork
+Cowork files
 
-Anthropic Microsoft 365 connector: https://support.claude.com/en/articles/15183774-connect-to-microsoft-365
+Spreadsheet skill
 
-Microsoft OneDrive connector: https://learn.microsoft.com/en-us/connectors/onedriveforbusiness/
+PowerPoint skill
 
-Microsoft Outlook Power Automate: https://learn.microsoft.com/en-us/power-automate/desktop-flows/actions-reference/office365outlook
+## Human check
+
+Five slides; Q3 revenue S$378k and net S$108.5k match Excel
+
+## Lab 04 — step-by-step
+
+C1382 · Topic 2 · 55 minutes
+
+### Goal
+
+Transform a finance workbook and manager brief into a clear five-slide presentation.
+
+### What you will build
+
+A five-slide management update with KPI chart, variance story, cash outlook and actions.
+
+### Prerequisites
+
+Open this lab folder as the Cowork project context. Read TOOLS.md, enable the named skill in skill/finance-deck-builder/SKILL.md, and use only the fictional files in mock-data/.
+
+### Steps
+
+Open `TOOLS.md` and confirm the available tools and access boundary.
+
+Review the files in `mock-data/`; copy any file you will change into `working/`.
+
+Add or enable `skill/finance-deck-builder/SKILL.md` in the Cowork project.
+
+Open `prompts/prompt-04.txt`, paste the prompt into Cowork and review its proposed plan.
+
+Allow only the reads and writes needed for this lab. Keep consequential actions paused.
+
+Open the generated files and compare them with `CHECKLIST.md`. Correct any mismatch in the output, then repeat the check.
+
+Save the finished artifacts in `outputs/` and record the evidence used.
+
+### Test it
+
+The deck has five slides, editable charts, correct Q3 revenue S$378,000, expense S$269,500, net S$108,500, and three actions from the manager brief.
+
+### Troubleshooting
+
+**Cowork selects the wrong file:** name the expected date format and require it to list candidates before choosing.
+
+**A workbook does not refresh:** open it in Excel, recalculate, and ask Cowork to inspect formulas and chart source ranges.
+
+**A claim has no source:** remove it or add a direct file, cell or URL reference.
+
+### Challenge
+
+Change the reporting period or audience and rerun the task without changing the skill's stable rules.
+
+### Reflection
+
+Which part of this task should always remain a human review point?
+
+# Use Case 05 — Build an AP Tracker from Invoices
+
+Scenario: Invoice details are copied one file at a time. Ask Cowork to extract five invoices and flag anything uncertain. The result is a tidy ap tracker ready for review.
+
+## What goes in
+
+Five mock invoice PDFs
+
+AP tracker template
+
+Review rules
+
+## What Cowork does
+
+Read invoices
+
+Extract fields
+
+Flag exceptions
+
+## Skills and tools
+
+Document reading
+
+PDF skill
+
+Spreadsheet skill
+
+## Human check
+
+Five rows; duplicate INV-204 and missing PO are visible
+
+## Lab 05 — step-by-step
+
+C1382 · Topic 3 · 45 minutes
+
+### Goal
+
+Read a folder of mock invoices and create a tidy accounts-payable tracker.
+
+### What you will build
+
+An AP-tracker.xlsx with invoice number, supplier, date, due date, amount, currency and review status.
+
+### Prerequisites
+
+Open this lab folder as the Cowork project context. Read TOOLS.md, enable the named skill in skill/invoice-to-ap-tracker/SKILL.md, and use only the fictional files in mock-data/.
+
+### Steps
+
+Open `TOOLS.md` and confirm the available tools and access boundary.
+
+Review the files in `mock-data/`; copy any file you will change into `working/`.
+
+Add or enable `skill/invoice-to-ap-tracker/SKILL.md` in the Cowork project.
+
+Open `prompts/prompt-05.txt`, paste the prompt into Cowork and review its proposed plan.
+
+Allow only the reads and writes needed for this lab. Keep consequential actions paused.
+
+Open the generated files and compare them with `CHECKLIST.md`. Correct any mismatch in the output, then repeat the check.
+
+Save the finished artifacts in `outputs/` and record the evidence used.
+
+### Test it
+
+The tracker contains five invoice rows, flags duplicate INV-204, marks one missing purchase order for review, and reconciles each invoice total.
+
+### Troubleshooting
+
+**Cowork selects the wrong file:** name the expected date format and require it to list candidates before choosing.
+
+**A workbook does not refresh:** open it in Excel, recalculate, and ask Cowork to inspect formulas and chart source ranges.
+
+**A claim has no source:** remove it or add a direct file, cell or URL reference.
+
+### Challenge
+
+Change the reporting period or audience and rerun the task without changing the skill's stable rules.
+
+### Reflection
+
+Which part of this task should always remain a human review point?
+
+# Use Case 06 — Write Budget Variance Commentary
+
+Scenario: Managers see variances but not the story. Ask Cowork to calculate material variances and explain them simply. The result is a reviewed workbook and one-page commentary.
+
+## What goes in
+
+Budget vs actual
+
+Department notes
+
+Materiality rule
+
+## What Cowork does
+
+Calculate variance
+
+Highlight material items
+
+Draft commentary
+
+## Skills and tools
+
+Cowork files
+
+Spreadsheet skill
+
+Document skill
+
+## Human check
+
+Each comment links to a line item or is marked as a question
+
+## Lab 06 — step-by-step
+
+C1382 · Topic 3 · 45 minutes
+
+### Goal
+
+Calculate material variances and write concise management commentary.
+
+### What you will build
+
+A variance-review.xlsx and a one-page management-commentary.md.
+
+### Prerequisites
+
+Open this lab folder as the Cowork project context. Read TOOLS.md, enable the named skill in skill/variance-commentary/SKILL.md, and use only the fictional files in mock-data/.
+
+### Steps
+
+Open `TOOLS.md` and confirm the available tools and access boundary.
+
+Review the files in `mock-data/`; copy any file you will change into `working/`.
+
+Add or enable `skill/variance-commentary/SKILL.md` in the Cowork project.
+
+Open `prompts/prompt-06.txt`, paste the prompt into Cowork and review its proposed plan.
+
+Allow only the reads and writes needed for this lab. Keep consequential actions paused.
+
+Open the generated files and compare them with `CHECKLIST.md`. Correct any mismatch in the output, then repeat the check.
+
+Save the finished artifacts in `outputs/` and record the evidence used.
+
+### Test it
+
+The workbook uses formulas, material items are highlighted, and the commentary names Marketing, Contractors and Travel with traceable evidence or questions.
+
+### Troubleshooting
+
+**Cowork selects the wrong file:** name the expected date format and require it to list candidates before choosing.
+
+**A workbook does not refresh:** open it in Excel, recalculate, and ask Cowork to inspect formulas and chart source ranges.
+
+**A claim has no source:** remove it or add a direct file, cell or URL reference.
+
+### Challenge
+
+Change the reporting period or audience and rerun the task without changing the skill's stable rules.
+
+### Reflection
+
+Which part of this task should always remain a human review point?
+
+# Use Case 07 — Build a Cash-Flow Watchlist
+
+Scenario: Receipts and payments sit in separate files. Ask Cowork to combine them into a 14-day running balance. The result is a cash watchlist and reviewed email draft.
+
+## What goes in
+
+Receivables
+
+Payments
+
+Cash assumptions
+
+## What Cowork does
+
+Merge dates
+
+Calculate balance
+
+Draft alert
+
+## Skills and tools
+
+Cowork files
+
+Spreadsheet skill
+
+Outlook draft
+
+## Human check
+
+Low-balance day and top payments match the workbook
+
+## Lab 07 — step-by-step
+
+C1382 · Topic 3 · 45 minutes
+
+### Goal
+
+Combine receivables and payment schedules into a two-week cash watchlist and draft an email.
+
+### What you will build
+
+A cashflow-watchlist.xlsx and a ready-for-review Outlook email draft.
+
+### Prerequisites
+
+Open this lab folder as the Cowork project context. Read TOOLS.md, enable the named skill in skill/cashflow-watchlist/SKILL.md, and use only the fictional files in mock-data/.
+
+### Steps
+
+Open `TOOLS.md` and confirm the available tools and access boundary.
+
+Review the files in `mock-data/`; copy any file you will change into `working/`.
+
+Add or enable `skill/cashflow-watchlist/SKILL.md` in the Cowork project.
+
+Open `prompts/prompt-07.txt`, paste the prompt into Cowork and review its proposed plan.
+
+Allow only the reads and writes needed for this lab. Keep consequential actions paused.
+
+Open the generated files and compare them with `CHECKLIST.md`. Correct any mismatch in the output, then repeat the check.
+
+Save the finished artifacts in `outputs/` and record the evidence used.
+
+### Test it
+
+The running-balance formula works, the lowest-balance day is flagged, and the email remains a draft with figures matching the workbook.
+
+### Troubleshooting
+
+**Cowork selects the wrong file:** name the expected date format and require it to list candidates before choosing.
+
+**A workbook does not refresh:** open it in Excel, recalculate, and ask Cowork to inspect formulas and chart source ranges.
+
+**A claim has no source:** remove it or add a direct file, cell or URL reference.
+
+### Challenge
+
+Change the reporting period or audience and rerun the task without changing the skill's stable rules.
+
+### Reflection
+
+Which part of this task should always remain a human review point?
+
+# Use Case 08 — Schedule a Weekly Finance Briefing
+
+Scenario: The same briefing is rebuilt every Monday. Ask Cowork to rehearse a scheduled task using only an approved workbook. The result is a controlled weekly routine ready for approval.
+
+## What goes in
+
+Approved workbook
+
+Release checklist
+
+Test recipient
+
+## What Cowork does
+
+Run on demand
+
+Check approval
+
+Prepare delivery flow
+
+## Skills and tools
+
+Scheduled tasks
+
+OneDrive
+
+Outlook + Power Automate
+
+## Human check
+
+Draft stays on demand; unapproved workbook is rejected
+
+## Lab 08 — step-by-step
+
+C1382 · Topic 3 · 45 minutes
+
+### Goal
+
+Package a reviewed weekly workbook and configure an on-demand rehearsal for scheduled delivery.
+
+### What you will build
+
+A scheduled-task prompt, release checklist and Power Automate attachment-flow specification.
+
+### Prerequisites
+
+Open this lab folder as the Cowork project context. Read TOOLS.md, enable the named skill in skill/scheduled-finance-briefing/SKILL.md, and use only the fictional files in mock-data/.
+
+### Steps
+
+Open `TOOLS.md` and confirm the available tools and access boundary.
+
+Review the files in `mock-data/`; copy any file you will change into `working/`.
+
+Add or enable `skill/scheduled-finance-briefing/SKILL.md` in the Cowork project.
+
+Open `prompts/prompt-08.txt`, paste the prompt into Cowork and review its proposed plan.
+
+Allow only the reads and writes needed for this lab. Keep consequential actions paused.
+
+Open the generated files and compare them with `CHECKLIST.md`. Correct any mismatch in the output, then repeat the check.
+
+Save the finished artifacts in `outputs/` and record the evidence used.
+
+### Test it
+
+The on-demand rehearsal finds one approved workbook, the checklist blocks unapproved files, and the flow specification maps filename and ContentBytes correctly without sending.
+
+### Troubleshooting
+
+**Cowork selects the wrong file:** name the expected date format and require it to list candidates before choosing.
+
+**A workbook does not refresh:** open it in Excel, recalculate, and ask Cowork to inspect formulas and chart source ranges.
+
+**A claim has no source:** remove it or add a direct file, cell or URL reference.
+
+### Challenge
+
+Change the reporting period or audience and rerun the task without changing the skill's stable rules.
+
+### Reflection
+
+Which part of this task should always remain a human review point?
+
+# Scheduling and connected tools
+
+Cowork scheduled tasks can use connected tools and cloud files. A schedule that needs local files or desktop applications runs locally. Start every scheduled workflow as an on-demand rehearsal. Keep the lab schedule disabled after the exercise.
+
+The Microsoft 365 connector can work with Outlook when organisation write tools are enabled. For an actual file attachment, the lab documents a Power Automate flow: OneDrive Approved Reports trigger, Get file content, then Outlook Send an email (V2) with Name and ContentBytes. Use a test mailbox and do not send during the lab.
+
+# Current references
+
+Claude Cowork: https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork
+
+Cowork projects: https://support.claude.com/en/articles/14116274-organize-your-tasks-with-projects-in-claude-cowork
+
+Scheduled tasks: https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork
+
+Microsoft 365 connector: https://support.claude.com/en/articles/15183774-connect-to-microsoft-365
+
+Outlook Power Automate actions: https://learn.microsoft.com/en-us/power-automate/desktop-flows/actions-reference/office365outlook

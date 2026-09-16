@@ -9,6 +9,7 @@ Thumbs.db
 .courseware-render.*/
 .qa-render/
 courseware/*.png
+courseware/assets/
 .claude/
 .codex/
 reference/

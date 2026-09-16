@@ -1,0 +1,5 @@
+- Workbook contains APPROVED marker
+- Period matches filename
+- Totals recalculate
+- Recipient is authorised test address
+- One file only in Approved Reports

@@ -1,3 +1,0 @@
-# Automate and reconcile the finance Excel workbook
-Work only in this synthetic finance lab folder. Produce a formula-driven August finance report from mock transactions. Source: mock-data/*.xlsx. Use the finance-control skill. Produce the exact outputs named in the instruction. Never edit mock-data. Inventory source rows and show exclusions. Pause before any email, connector write, scheduled task activation or move to Approved Reports. Report the formula references and checks, not just a narrative conclusion.
-Required sheets: Raw, Eligible, Summary, Exceptions. Expected control totals are in checks/control-totals.csv; independently compute them before reading that file.

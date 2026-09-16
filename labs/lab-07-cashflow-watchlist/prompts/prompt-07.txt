@@ -1,0 +1,5 @@
+# Lab 07: Build a Cash-Flow Watchlist and Email Draft
+
+Combine mock-data/receivables.xlsx and mock-data/payments.xlsx into outputs/cashflow-watchlist.xlsx. Show the next 14 days by date with expected inflows, expected outflows and running cash balance from the opening balance in assumptions.txt. Flag any day below the S$50,000 buffer. Draft outputs/cash-alert-email.md for the Finance Manager with the lowest balance date, three largest upcoming payments and suggested follow-ups. Do not send the email.
+
+Before finishing, use CHECKLIST.md and list each check as complete or needs review.

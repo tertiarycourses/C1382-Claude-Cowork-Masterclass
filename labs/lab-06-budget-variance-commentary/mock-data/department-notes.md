@@ -1,0 +1,1 @@
+Marketing: product launch media was brought forward. Contractors: temporary reporting support continued for two extra weeks. Travel: regional client visits increased. Facilities: electricity usage decreased.

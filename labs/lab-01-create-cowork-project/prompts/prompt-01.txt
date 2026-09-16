@@ -1,0 +1,5 @@
+# Lab 01: Create a Cowork Project for Finance Tasks
+
+Create a Finance Task Automation project from this lab folder. Read PROJECT-BRIEF.md and inventory mock-data. Do not edit mock-data. Save a friendly one-page file map to outputs/file-map.md. Tell me what you found, what you will use, and what you will ignore. Pause before moving, deleting, emailing, or publishing anything.
+
+Before finishing, use CHECKLIST.md and list each check as complete or needs review.

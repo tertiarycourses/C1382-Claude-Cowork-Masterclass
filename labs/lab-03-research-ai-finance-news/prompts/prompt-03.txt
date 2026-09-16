@@ -1,0 +1,5 @@
+# Lab 03: Research the Latest AI-in-Finance News into Excel
+
+Use web search to find six credible AI technology developments relevant to finance from the last 30 days. Prefer official company, regulator, research or product sources. For each item record publication date, publisher, title, direct URL, 40-word summary, finance impact, and one follow-up question. Add the findings to a copy of mock-data/ai-finance-news-template.xlsx and save it as outputs/AI-finance-news-tracker.xlsx. Do not invent dates or links. Add Research Notes with the search date and excluded results.
+
+Before finishing, use CHECKLIST.md and list each check as complete or needs review.
