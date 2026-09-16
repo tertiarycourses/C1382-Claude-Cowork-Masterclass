@@ -2,18 +2,18 @@
 
 Meridian Capital Partners is a fictitious Singapore-based investment and advisory firm with four revenue desks — Advisory, Asset Management, Private Credit and Corporate Finance. All figures, clients, staff and documents in this course are synthetic and used for training only.
 
-Six labs, one continuous build. Lab 01 creates your first Live
-Artefact; every lab after it extends the same scenario, so work through them in
-order.
+Seven labs, one continuous build, opening with Process a Folder of Invoices.
+Every lab after it extends the same scenario, so work through them in order.
 
 | Lab | Topic | Title | You build |
 |---|---|---|---|
-| 01 | 01 Claude Cowork Fundamentals | [Your First Live Artefact](lab-01-first-live-artefact/INSTRUCTIONS.md) | A saved, downloaded Live Artefact — a working Meridian FX converter. |
-| 02 | 01 Claude Cowork Fundamentals | [The Meridian Sales Dashboard](lab-02-sales-dashboard-live-artefact/INSTRUCTIONS.md) | A saved Live Artefact dashboard showing Meridian's FY2026 revenue by desk. |
-| 03 | 02 Tools and Skills | [Connect Google Drive](lab-03-connect-google-drive/INSTRUCTIONS.md) | A working Google Drive connection scoped to the Meridian finance folder. |
-| 04 | 02 Tools and Skills | [Refresh the Dashboard and Send the Summary](lab-04-gmail-summary-delivery/INSTRUCTIONS.md) | An updated dashboard plus an approved quarterly summary email sent to yourself. |
-| 05 | 02 Tools and Skills | [Build a /daily-brief Skill](lab-05-daily-brief-skill/INSTRUCTIONS.md) | A daily-brief Agent Skill you can run by name each morning. |
-| 06 | 03 Claude Projects | [Build the Meridian Claude Project](lab-06-meridian-claude-project/INSTRUCTIONS.md) | A Meridian Finance Reporting project holding the data, instructions, skill and dashboard. |
+| 01 | 01 Claude Cowork Fundamentals | [Process a Folder of Invoices](lab-01-invoices-to-csv/INSTRUCTIONS.md) | An invoices_2025.csv summary plus the PDFs filed into YEAR-MONTH folders. |
+| 02 | 01 Claude Cowork Fundamentals | [Your First Live Artefact](lab-02-first-live-artefact/INSTRUCTIONS.md) | A saved, downloaded Live Artefact — a working Meridian FX converter. |
+| 03 | 01 Claude Cowork Fundamentals | [The Meridian Sales Dashboard](lab-03-sales-dashboard-live-artefact/INSTRUCTIONS.md) | A saved Live Artefact dashboard showing Meridian's FY2025 revenue by desk. |
+| 04 | 02 Tools and Skills | [Connect Google Drive](lab-04-connect-google-drive/INSTRUCTIONS.md) | A working Google Drive connection scoped to the Meridian finance folder. |
+| 05 | 02 Tools and Skills | [Refresh the Dashboard and Send the Summary](lab-05-gmail-summary-delivery/INSTRUCTIONS.md) | An updated dashboard plus an approved quarterly summary email sent to yourself. |
+| 06 | 02 Tools and Skills | [Build a /daily-brief Skill](lab-06-daily-brief-skill/INSTRUCTIONS.md) | A daily-brief Agent Skill you can run by name each morning, updated once. |
+| 07 | 03 Claude Projects | [Build the Meridian Claude Project](lab-07-meridian-claude-project/INSTRUCTIONS.md) | A Meridian Finance Reporting project holding the data, instructions, skill and dashboard. |
 
 ## What each lab folder holds
 

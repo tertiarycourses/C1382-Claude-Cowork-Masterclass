@@ -1,6 +1,6 @@
 # Claude Cowork Masterclass — Learner Guide
 
-**Course Code:** C1382  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v3.0 · 16 September 2026**
+**Course Code:** C1382  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v3.1 · 17 September 2026**
 
 ## Contents
 
@@ -8,14 +8,15 @@
 - [Course Learning Outcomes](#course-learning-outcomes)
 - [Before You Start — Preparation](#before-you-start--preparation)
 - [Topic 01 — Claude Cowork Fundamentals](#topic-01--claude-cowork-fundamentals)
-  - [Lab 1 — Your First Live Artefact](#lab-1--your-first-live-artefact)
-  - [Lab 2 — The Meridian Sales Dashboard](#lab-2--the-meridian-sales-dashboard)
+  - [Lab 1 — Process a Folder of Invoices](#lab-1--process-a-folder-of-invoices)
+  - [Lab 2 — Your First Live Artefact](#lab-2--your-first-live-artefact)
+  - [Lab 3 — The Meridian Sales Dashboard](#lab-3--the-meridian-sales-dashboard)
 - [Topic 02 — Tools and Skills](#topic-02--tools-and-skills)
-  - [Lab 3 — Connect Google Drive](#lab-3--connect-google-drive)
-  - [Lab 4 — Refresh the Dashboard and Send the Summary](#lab-4--refresh-the-dashboard-and-send-the-summary)
-  - [Lab 5 — Build a /daily-brief Skill](#lab-5--build-a-daily-brief-skill)
+  - [Lab 4 — Connect Google Drive](#lab-4--connect-google-drive)
+  - [Lab 5 — Refresh the Dashboard and Send the Summary](#lab-5--refresh-the-dashboard-and-send-the-summary)
+  - [Lab 6 — Build a /daily-brief Skill](#lab-6--build-a-daily-brief-skill)
 - [Topic 03 — Claude Projects](#topic-03--claude-projects)
-  - [Lab 6 — Build the Meridian Claude Project](#lab-6--build-the-meridian-claude-project)
+  - [Lab 7 — Build the Meridian Claude Project](#lab-7--build-the-meridian-claude-project)
 - [Wrap-Up](#wrap-up)
 - [Next Steps](#next-steps)
 - [Glossary](#glossary)
@@ -23,18 +24,18 @@
 
 ## Introduction
 
-Claude Cowork is the desktop agent in the Claude family built for people who work with files and reports rather than code. This course teaches it through one continuous scenario: you are on the finance team at Meridian Capital Partners Pte Ltd, and over six labs you build a live sales dashboard, connect it to the firm's data in Google Drive, deliver an approved summary by Gmail, wrap that routine into a reusable daily-brief skill, and finish by gathering everything into one Claude Project your whole team can work from.
+Claude Cowork is the desktop agent in the Claude family built for people who work with files and reports rather than code. This course teaches it through one continuous scenario: you are on the finance team at Meridian Capital Partners Pte Ltd, and over seven labs you process a year of invoices, build a live sales dashboard, connect it to the firm's data in Google Drive, deliver an approved summary by Gmail, wrap that routine into a reusable daily-brief skill, and finish by gathering everything into one Claude Project your whole team can work from.
 
 Meridian Capital Partners is a fictitious Singapore-based investment and advisory firm with four revenue desks — Advisory, Asset Management, Private Credit and Corporate Finance. All figures, clients, staff and documents in this course are synthetic and used for training only.
 
 
 ## Course Learning Outcomes
 
-- LO1: Set up Claude and the Cowork desktop workspace, and explain where Cowork fits in the Claude product family.
+- LO1: Set up the Cowork desktop workspace and have Claude process a folder of documents into a structured summary.
 - LO2: Build, save and download a Live Artefact, including an interactive sales dashboard from supplied data.
 - LO3: Connect the Google Drive connector so Claude can read finance data held outside the chat.
 - LO4: Refresh a Live Artefact from connected data and send an approved summary with the Gmail connector.
-- LO5: Write an Agent Skill that runs a repeatable routine across your connected tools on one command.
+- LO5: Turn a verified routine into an Agent Skill with /skill-creator, update it, and explain a skill's three layers.
 - LO6: Assemble a Claude Project that holds the data, instructions, skill and dashboard as one reusable team workspace.
 
 
@@ -61,7 +62,7 @@ Open the Claude desktop app, sign in, and confirm you can see Cowork in the side
 
 ## Topic 01 — Claude Cowork Fundamentals
 
-The Claude family · Cowork setup · Live Artefacts · save & download
+The Claude family · Cowork setup · Live Artefacts · working with documents
 
 **Key concepts**
 
@@ -73,11 +74,124 @@ The Claude family · Cowork setup · Live Artefacts · save & download
 - ('Download to share', 'Export the artefact so it can be filed, attached or handed to someone without Claude.')
 
 
-### Lab 1 — Your First Live Artefact
+### Lab 1 — Process a Folder of Invoices
+
+Learning outcome: extract structured data from a folder of PDFs and reorganise the files.
+
+Goal: Meridian's accountant needs the 2025 supplier invoices summarised and filed. You point Cowork at a folder of 126 PDFs — a full year of invoices, a few expense receipts, and the untidy filenames a real downloads folder collects — and have it read every document, build one CSV, and sort the files into month folders. This is work no dashboard can do: reading documents and acting on your file system. It is also far more than you would ever do by hand, which is the point.
+
+**What you'll build**
+
+An invoices_2025.csv summary plus the PDFs filed into YEAR-MONTH folders.   (Tools: Claude Cowork, local files, PDF reading.)
+
+**The prompt**
+
+Copy the block below into Claude exactly as it is.
+
+```text
+In this folder are all my invoices from 2025. I need you to process
+these so I can send them to my accountant.
+
+Read each invoice and extract the following data points:
+
+- invoice number
+- invoice sender
+- invoice sender address
+- invoice date
+- invoice due date
+- total amount due
+- currency
+
+Then create a CSV called invoices_2025.csv where you store all this
+information as well as the filename.
+
+After you have extracted the information, move each invoice PDF into
+sub folders based on the YEAR-MONTH of the invoice date, using the
+naming convention 2025-01, 2025-02 and so on.
+
+Flag anything that does not look like a normal supplier invoice, or
+that you think I should check. Do not delete any file.
+```
+
+> **Note:** Work on a copy of the folder — tell Claude to move files, never to delete them.
+
+**Step-by-step**
+
+1. Open the Claude desktop app, sign in, and choose Cowork in the sidebar.
+
+   ```bash
+   Cowork is a desktop feature on a paid plan — the browser version cannot reach your files.
+   ```
+
+2. Copy the lab's "2025 Invoices" folder somewhere you can work on it.
+
+   ```bash
+   Always run a file-moving task against a copy the first time, so a mistake costs nothing.
+   ```
+
+3. Open the folder yourself and skim it before you start — 126 files.
+
+   ```bash
+   Two have machine-generated names and one looks like a duplicate. You cannot check 126 documents by hand, but you can check that the summary adds up.
+   ```
+
+4. Start a Cowork session pointed at that folder, then paste the lab prompt.
+
+   ```bash
+   Cowork needs access to the folder itself, not an attachment, because it must move files as well as read them.
+   ```
+
+5. Let Claude work through the PDFs — this one takes a few minutes.
+
+   ```bash
+   It is reading each document, not guessing from the filename, which is why the oddly-named files still land correctly.
+   ```
+
+6. Open invoices_2025.csv and check the row count against the folder.
+
+   ```bash
+   Expect 121 invoice rows — 117 in SGD and 4 in USD — with the receipts and the duplicate flagged rather than silently mixed in.
+   ```
+
+7. Total the SGD column and compare it against S$777,954.81.
+
+   ```bash
+   Spot-check a few rows against the PDFs too: a total that reconciles tells you the extraction held across all 126 files.
+   ```
+
+8. Check the currency column — four invoices are in US dollars.
+
+   ```bash
+   Never sum a mixed-currency column. This is exactly the kind of thing a human check is for.
+   ```
+
+9. Confirm the PDFs now sit in 2025-01 … 2025-12 folders and nothing was deleted.
+
+   ```bash
+   The file dates come from inside each document, so a file named Jan can still be filed by its real invoice date.
+   ```
+
+10. Read Claude's list of flagged items and decide what to do about each.
+
+   ```bash
+   Claude surfaces the exceptions; you make the call — that is the working relationship this course is teaching.
+   ```
+
+
+**Test it**
+
+invoices_2025.csv lists every invoice with all seven fields plus the filename. The 117 SGD invoices total S$777,954.81; the four USD invoices are marked USD rather than added to that total. The duplicated invoice and the four expense receipts are flagged rather than counted as ordinary invoices. The PDFs now sit in 2025-01 … 2025-12 folders and all 126 files are still present.
+
+> **Note:** Full commands and screenshots are in labs/lab-01-*.md. Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient.
+
+---
+
+
+### Lab 2 — Your First Live Artefact
 
 Learning outcome: set up the Cowork workspace and build, save and download a Live Artefact.
 
-Goal: You have just joined the finance team at Meridian Capital Partners. Before touching the firm's numbers, you get Claude Cowork working and build a small Live Artefact so you can see how an artefact differs from a chat answer — it persists, it is interactive, and you can save and download it.
+Goal: Now you have seen Cowork do a real piece of work, meet the other thing it makes: a Live Artefact. You build a small tool rather than ask a question, so you can see how an artefact differs from a chat answer — it persists, it is interactive, and you can save and download it.
 
 **What you'll build**
 
@@ -104,43 +218,37 @@ Make it interactive so I can change the amount and see the result update.
 
 **Step-by-step**
 
-1. Open the Claude desktop app and sign in with your paid-plan account.
+1. Start a new Cowork session — this lab needs no files.
 
    ```bash
-   Live Artefacts and local file access are desktop features — the browser version does not support them.
+   Lab 1 gave Claude a folder to work in; here you are asking it to build something from nothing.
    ```
 
-2. Choose Cowork in the sidebar to open the agent workspace rather than a plain chat.
-
-   ```bash
-   Cowork gives Claude a workspace it can act in, instead of only answering in the conversation.
-   ```
-
-3. Paste the lab prompt into the composer and send it.
+2. Paste the lab prompt into the composer and send it.
 
    ```bash
    Claude writes the code and renders the converter in the preview pane beside the chat.
    ```
 
-4. Try the converter: change the amount and switch the currencies.
+3. Try the converter: change the amount and switch the currencies.
 
    ```bash
    This is what makes it an artefact rather than an answer — you can interact with it.
    ```
 
-5. Ask for one refinement in plain English, for example: Add a thousands separator to the result.
+4. Ask for one refinement in plain English, for example: Add a thousands separator to the result.
 
    ```bash
    Refining by conversation is the normal way to work — you never edit the code yourself.
    ```
 
-6. Save the artefact so it appears in your sidebar.
+5. Save the artefact so it appears in your sidebar.
 
    ```bash
    A saved artefact persists as a reusable tool; an unsaved one scrolls away with the chat.
    ```
 
-7. Download a copy of the artefact to your lab folder.
+6. Download a copy of the artefact to your lab folder.
 
    ```bash
    Downloading gives you a file you can keep, attach or hand to someone without Claude.
@@ -151,12 +259,12 @@ Make it interactive so I can change the amount and see the result update.
 
 Converting S$10,000 to USD shows US$7,400. The artefact appears in your sidebar after saving, still works when you reopen it, and a downloaded copy is in your lab folder.
 
-> **Note:** Full commands and screenshots are in labs/lab-01-*.md. Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient.
+> **Note:** Full commands and screenshots are in labs/lab-02-*.md. Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient.
 
 ---
 
 
-### Lab 2 — The Meridian Sales Dashboard
+### Lab 3 — The Meridian Sales Dashboard
 
 Learning outcome: turn supplied finance data into an interactive Live Artefact dashboard.
 
@@ -164,14 +272,14 @@ Goal: Meridian's head of finance wants to see how the four revenue desks perform
 
 **What you'll build**
 
-A saved Live Artefact dashboard showing Meridian's FY2026 revenue by desk.   (Tools: Claude Cowork, Live Artefacts, local files.)
+A saved Live Artefact dashboard showing Meridian's FY2025 revenue by desk.   (Tools: Claude Cowork, Live Artefacts, local files.)
 
 **The prompt**
 
 Copy the block below into Claude exactly as it is.
 
 ```text
-Using the attached meridian-sales-fy2026.csv, build me a Live Artefact:
+Using the attached meridian-sales-fy2025.csv, build me a Live Artefact:
 an interactive sales dashboard for Meridian Capital Partners.
 
 Include:
@@ -183,14 +291,14 @@ Include:
 
 Format all money as Singapore dollars with thousands separators.
 Use a clean, professional finance layout. Title it
-"Meridian Capital Partners — FY2026 Revenue".
+"Meridian Capital Partners — FY2025 Revenue".
 ```
 
 > **Note:** Attach the CSV from your lab's mock-data folder before sending the prompt.
 
 **Step-by-step**
 
-1. Open the lab folder and look at meridian-sales-fy2026.csv so you know what the data holds.
+1. Open the lab folder and look at meridian-sales-fy2025.csv so you know what the data holds.
 
    ```bash
    Always know your source before you ask Claude to summarise it — that is how you spot a wrong figure later.
@@ -229,7 +337,7 @@ Use a clean, professional finance layout. Title it
 7. Save the dashboard to your sidebar with a clear name, then download a copy.
 
    ```bash
-   You will reopen this same artefact in Lab 4 and rebrand it in Lab 6.
+   You will refresh this same artefact from connected data in Lab 5.
    ```
 
 
@@ -237,14 +345,14 @@ Use a clean, professional finance layout. Title it
 
 The dashboard shows total revenue S$24,850,000 and 214 deals, Advisory is the best desk at S$8,420,000, the desk filter changes the chart, and the artefact reopens from your sidebar after you close it.
 
-> **Note:** Full commands and screenshots are in labs/lab-02-*.md. Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient.
+> **Note:** Full commands and screenshots are in labs/lab-03-*.md. Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient.
 
 ---
 
 
 ## Topic 02 — Tools and Skills
 
-Google Drive · Gmail · Agent Skills · a reusable /daily-brief automation
+Google Drive · Gmail · Agent Skills · /skill-creator · a reusable /daily-brief automation
 
 **Key concepts**
 
@@ -253,10 +361,13 @@ Google Drive · Gmail · Agent Skills · a reusable /daily-brief automation
 - ('Scope the folder', 'Point Claude at one Drive folder for the task — not your whole Drive.')
 - ('Gmail', 'Claude drafts, sends, replies and labels — sending asks for explicit approval by default.')
 - ('Agent Skills', 'A folder of instructions Claude loads on demand, so a task runs the same way every time.')
+- ('Three layers', 'Metadata is always in context; the SKILL.md loads when triggered; resources load only when needed.')
+- ('/skill-creator', 'Do the task once, verify the output, then let skill-creator write the SKILL.md for you.')
+- ('Skills evolve', 'Update a skill as you learn what you want — saving over it replaces the old version, so re-run to confirm.')
 - ('Skills use tools', 'A skill can drive the connectors for you — one command that checks Drive and Gmail and reports back.')
 
 
-### Lab 3 — Connect Google Drive
+### Lab 4 — Connect Google Drive
 
 Learning outcome: enable the Google Drive connector and read finance data held outside the chat.
 
@@ -332,18 +443,18 @@ List anything that looks inconsistent between the files.
 
 **Test it**
 
-Claude lists all three Meridian Finance files with their periods, reports FY2026 revenue of S$24,850,000, and flags that the Q4 Advisory target disagrees between the two files — S$2,320,000 in the targets file against S$2,410,000 in the workbook. Nothing in Drive has been changed.
+Claude lists all three Meridian Finance files with their periods, reports FY2025 revenue of S$24,850,000, and flags that the Q4 Advisory target disagrees between the two files — S$2,320,000 in the targets file against S$2,410,000 in the workbook. Nothing in Drive has been changed.
 
-> **Note:** Full commands and screenshots are in labs/lab-03-*.md. Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient.
+> **Note:** Full commands and screenshots are in labs/lab-04-*.md. Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient.
 
 ---
 
 
-### Lab 4 — Refresh the Dashboard and Send the Summary
+### Lab 5 — Refresh the Dashboard and Send the Summary
 
 Learning outcome: update the Live Artefact from connected data and deliver an approved summary by Gmail.
 
-Goal: Quarter end has arrived. You refresh the dashboard you built in Lab 2 using the data Claude now reads from Drive, then have it draft a quarterly summary email to the head of finance. You read the draft against the figures and approve it before a single message leaves your outbox.
+Goal: Quarter end has arrived. You refresh the dashboard you built in Lab 3 using the data Claude now reads from Drive, then have it draft a quarterly summary email to the head of finance. You read the draft against the figures and approve it before a single message leaves your outbox.
 
 **What you'll build**
 
@@ -356,14 +467,14 @@ Copy the block below into Claude exactly as it is.
 ```text
 Two tasks, in order.
 
-1. Open my saved "Meridian Capital Partners — FY2026 Revenue"
+1. Open my saved "Meridian Capital Partners — FY2025 Revenue"
    dashboard and update it from the Meridian Finance folder in Google
    Drive. Add a Q4 column to the desk breakdown and show each desk's
    actual against its target.
 
 2. Then draft an email to <YOUR OWN ADDRESS> with the subject
-   "Meridian FY2026 — Q4 revenue summary". In the body:
-   - Total FY2026 revenue and the Q4 figure.
+   "Meridian FY2025 — Q4 revenue summary". In the body:
+   - Total FY2025 revenue and the Q4 figure.
    - Each desk's Q4 actual against target, best and worst first.
    - Two sentences explaining the largest variance.
    - A closing line noting the Q4 Advisory target discrepancy.
@@ -375,7 +486,7 @@ Show me the draft. Do not send it until I approve it.
 
 **Step-by-step**
 
-1. Reopen the dashboard you saved in Lab 2 from your sidebar.
+1. Reopen the dashboard you saved in Lab 3 from your sidebar.
 
    ```bash
    You are extending the artefact you already built, not starting a new one.
@@ -422,100 +533,120 @@ Show me the draft. Do not send it until I approve it.
 
 The dashboard shows a Q4 column with actual against target per desk and Q4 revenue of S$6,980,000. The email arrives in your own inbox with the correct totals and a closing note about the Advisory target discrepancy.
 
-> **Note:** Full commands and screenshots are in labs/lab-04-*.md. Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient.
+> **Note:** Full commands and screenshots are in labs/lab-05-*.md. Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient.
 
 ---
 
 
-### Lab 5 — Build a /daily-brief Skill
+### Lab 6 — Build a /daily-brief Skill
 
-Learning outcome: write an Agent Skill that runs a repeatable routine across your connected tools.
+Learning outcome: turn a routine you have already done into a reusable Agent Skill, and update it.
 
-Goal: Labs 3 and 4 showed what the connectors can do — but you had to describe the whole routine each time. Now you capture it once as an Agent Skill. Every morning you type one command and Claude checks Drive and Gmail and briefs you on where Meridian's reporting stands, in the same format every day.
+Goal: Labs 4 and 5 showed what the connectors can do — but you had to describe the whole routine each time. Now you capture it once. The reliable way to build a skill is the Do / Verify / Save pattern: do the task with Claude once, refine until the output is right, then use the /skill-creator skill to save it. You have already done the doing — this lab turns it into a command, then updates it.
 
 **What you'll build**
 
-A daily-brief Agent Skill you can run by name each morning.   (Tools: Claude Cowork, Agent Skills, Google Drive connector, Gmail connector.)
+A daily-brief Agent Skill you can run by name each morning, updated once.   (Tools: Claude Cowork, Agent Skills, /skill-creator, Google Drive connector, Gmail connector.)
 
 **The prompt**
 
 Copy the block below into Claude exactly as it is.
 
 ```text
-I want to create an automation. I want this to be a daily briefing
-automation for my finance work at Meridian Capital Partners.
-
-The goal: every morning when I come into Claude, I type /daily-brief
-and it runs the routine and catches me up on everything:
+Step 1 — DO. Run my morning finance briefing for Meridian Capital
+Partners, once, so we can get the format right together:
 
 - What changed in the Meridian Finance folder on Google Drive since
   yesterday?
 - Which desks are behind their quarterly target right now?
 - What finance emails do I need to respond to today?
 
-I want fallbacks. If there is nothing in a section, say so plainly —
-"No new files since yesterday" — rather than padding it out.
-End with one line on what most needs my attention, or "Nothing
-urgent — have a good day" if there is nothing.
+If a section has nothing in it, say so plainly — "No new files since
+yesterday" — rather than padding it out. End with one line on what most
+needs my attention, or "Nothing urgent — have a good day" if there is
+nothing. All money in Singapore dollars. Draft only — never send email.
 
-Keep all money in Singapore dollars with thousands separators.
-Draft only — never send an email as part of this routine.
-
-Save this as a skill I can reuse, and show me the finished SKILL.md.
+Step 2 — SAVE. Once I confirm the output is right, use the
+/skill-creator skill to turn exactly this routine into a skill called
+daily-brief that I can run every morning.
 ```
 
-> **Note:** The description line is what tells Claude when to load the skill — keep it specific.
+> **Note:** Do it once, check the output, then save it — that order is what makes the skill reliable.
 
 **Step-by-step**
 
-1. Make sure the Drive and Gmail connectors from Labs 3 and 4 are still enabled.
+1. Make sure the Drive and Gmail connectors from Labs 4 and 5 are still enabled.
 
    ```bash
    The skill drives those connectors, so it can only work if they are on.
    ```
 
-2. Paste the lab prompt into Cowork.
+2. DO — paste Step 1 of the lab prompt and let Claude run the routine once.
 
    ```bash
-   You are describing the routine once; Claude writes it into the skill structure.
+   You are not writing instructions yet; you are doing the task together so Claude sees what good looks like.
    ```
 
-3. Read the SKILL.md Claude produces, starting with the description line.
+3. VERIFY — read the briefing and ask for changes until the format is right.
 
    ```bash
-   The description is how Claude decides whether to load the skill for a future task.
+   Reorder a section, tighten the wording, fix a heading. Whatever you settle on here is what the skill will reproduce.
    ```
 
-4. Check each of the three sections is there, with its fallback wording.
+4. Check the fallback wording on any empty section.
 
    ```bash
-   The fallbacks are what stop the routine inventing filler on a quiet morning.
+   The fallbacks are what stop the routine inventing filler on a quiet morning — get them right before you save.
    ```
 
-5. Confirm the skill drafts only and never sends — ask for a correction if not.
+5. Confirm it drafted and did not send anything.
 
    ```bash
-   A routine that runs unattended must not be able to send mail on its own.
+   A routine you will run unattended must not be able to send mail on its own.
    ```
 
-6. Save the skill, then run it by name to see the briefing.
+6. SAVE — run Step 2 so /skill-creator turns the routine into a daily-brief skill.
 
    ```bash
-   This is the payoff: one command instead of re-describing the whole routine.
+   The skill-creator skill writes the SKILL.md for you, from the run you just verified.
    ```
 
-7. Run it a second time and confirm the format is identical.
+7. Read the SKILL.md it produces, especially the description line.
 
    ```bash
-   Consistency is the point of a skill — the same structure every single run.
+   The description is how Claude decides whether to load the skill for a future task — make it specific.
+   ```
+
+8. Run the skill by name, then run it again.
+
+   ```bash
+   The same structure both times is the payoff: one command instead of re-describing the routine every morning.
+   ```
+
+9. UPDATE — ask for one change, such as putting the emails section first.
+
+   ```bash
+   A skill is not written once. You keep refining it as you learn what you actually want each morning.
+   ```
+
+10. Save the change under the same skill name and confirm the replace prompt.
+
+   ```bash
+   Claude warns that a skill with this name already exists and that replacing it cannot be undone — read that prompt before you accept it.
+   ```
+
+11. Run the skill once more to confirm the change took effect.
+
+   ```bash
+   Always re-run after an update; that is how you know the new version is the one being loaded.
    ```
 
 
 **Test it**
 
-Running the skill produces a briefing with all three sections — Drive changes, desks behind target, emails needing a reply — using the plain fallback wording where a section is empty, ending with a single attention line, with all money in SGD and no email sent.
+Running the daily-brief skill by name produces a briefing with all three sections — Drive changes, desks behind target, emails needing a reply — using the plain fallback wording where a section is empty, ending with a single attention line, with all money in SGD and no email sent. After the update, the revised section order appears on the next run — and Claude warned you before replacing the existing skill.
 
-> **Note:** Full commands and screenshots are in labs/lab-05-*.md. Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient.
+> **Note:** Full commands and screenshots are in labs/lab-06-*.md. Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient.
 
 ---
 
@@ -534,7 +665,7 @@ Bringing it together · project knowledge · reusable workspace for the team
 - ('Share the folder', 'A colleague opens the same project and inherits the data, rules and tools you set up.')
 
 
-### Lab 6 — Build the Meridian Claude Project
+### Lab 7 — Build the Meridian Claude Project
 
 Learning outcome: assemble the data, instructions, skill and dashboard into one reusable Project.
 
@@ -603,7 +734,7 @@ will now do differently in every chat in this project.
    A Cowork project is backed by a real folder on your computer — you can open the files yourself at any time.
    ```
 
-6. Add the daily-brief skill from Lab 5 to the project.
+6. Add the daily-brief skill from Lab 6 to the project.
 
    ```bash
    The routine now travels with the project, so anyone working in it can run it.
@@ -615,7 +746,7 @@ will now do differently in every chat in this project.
    This is what distinguishes a Cowork project — the instructions and files are a folder you own, not something locked inside the app.
    ```
 
-8. Save the FY2026 dashboard into the project so it sits with the data it reports on.
+8. Save the FY2025 dashboard into the project so it sits with the data it reports on.
 
    ```bash
    The artefact, its data and its rules finally live in one place.
@@ -638,14 +769,14 @@ will now do differently in every chat in this project.
 
 A Meridian Finance Reporting project exists, backed by a folder containing the finance data and brand guidelines, with project instructions set, the daily-brief skill available and the dashboard saved. A brand-new chat in the project produces a Q4 summary in SGD with the correct header and footer without you attaching a file or restating a single rule.
 
-> **Note:** Full commands and screenshots are in labs/lab-06-*.md. Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient.
+> **Note:** Full commands and screenshots are in labs/lab-07-*.md. Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient.
 
 ---
 
 
 ## Wrap-Up
 
-Across six labs you took one finance scenario from a blank workspace to a branded, connected, reusable dashboard.
+Across seven labs you took one finance scenario from a blank workspace to a branded, connected, reusable dashboard.
 
 **What you built**
 
