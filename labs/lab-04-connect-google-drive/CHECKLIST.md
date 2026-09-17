@@ -3,7 +3,8 @@
 - [ ] Upload the lab's mock-data files to a new Google Drive folder named Meridian Finance.
 - [ ] In Claude, click the plus sign in the composer and hover over Connectors.
 - [ ] Toggle Google Drive on and sign in to your Google account.
-- [ ] Approve the permissions Google asks for.
+- [ ] Approve the permissions Google asks for — grant FULL READ access.
+- [ ] If Claude reports an "insufficient scope" error, reconnect the connector.
 - [ ] Paste the lab prompt so Claude reads the Meridian Finance folder.
 - [ ] Compare Claude's file summary against what you actually uploaded.
 - [ ] Note any inconsistency Claude reports between the files.

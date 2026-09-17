@@ -51,13 +51,15 @@ List anything that looks inconsistent between the files.
    This is where you turn individual connectors on and off for your account.
 3. **Toggle Google Drive on and sign in to your Google account.**
    On a Team or Enterprise plan an owner must enable connectors for the organisation first.
-4. **Approve the permissions Google asks for.**
-   Approve only what you are willing to let Claude reach — you can revoke access later.
-5. **Paste the lab prompt so Claude reads the Meridian Finance folder.**
+4. **Approve the permissions Google asks for — grant FULL READ access.**
+   Approve only what you are willing to let Claude reach. But if you decline the read scopes here, Claude connects yet cannot open anything.
+5. **If Claude reports an "insufficient scope" error, reconnect the connector.**
+   Settings → Connectors → Google Drive → Reconnect, and accept the read permissions. A connector can show "Connected" while still missing the drive.readonly scope it needs to search and read files.
+6. **Paste the lab prompt so Claude reads the Meridian Finance folder.**
    Naming the folder scopes the task; Claude does not need access to your whole Drive.
-6. **Compare Claude's file summary against what you actually uploaded.**
+7. **Compare Claude's file summary against what you actually uploaded.**
    Confirm it found every file and read the right periods before you rely on it.
-7. **Note any inconsistency Claude reports between the files.**
+8. **Note any inconsistency Claude reports between the files.**
    The Q4 Advisory target deliberately disagrees between two files — a real check.
 
 ## Check your work
