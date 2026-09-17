@@ -152,45 +152,49 @@ An FX converter as a saved artefact, plus a downloadable HTML version with live 
 Copy the block below into Claude exactly as it is.
 
 ```text
-Two things, in order.
+I want a currency converter for Meridian Capital Partners, in three
+steps. Artefacts cannot call the internet, so do NOT put any fetch,
+API call or network request in the artefact — it will fail.
 
-1. Look up today's mid-market exchange rates from SGD to USD, EUR
-   and GBP, and tell me the rates and the date you found them.
+STEP 1 — You look up the rates.
+Search the web for today's mid-market rates from SGD to USD, EUR and
+GBP. Tell me the three rates and the date, in the chat.
 
-2. Build me a Live Artefact: a currency converter for Meridian
-   Capital Partners using exactly those rates.
+STEP 2 — Build the artefact with those numbers HARD-CODED.
+Write the three rates into the code as constants. No fetch anywhere.
    - Convert between SGD, USD, EUR and GBP.
    - One amount box, a from-currency and a to-currency selector,
-     and a large result.
-   - Under the result show the rate used, and a line saying
-     "Rates as at <the date you looked them up>".
-   - Clean, professional finance styling. Label it "Meridian
-     Capital Partners".
+     and a large result that updates as I type.
+   - Under the result show the rate used, and the line
+     "Rates as at <the date from Step 1> — fixed at build time".
+   - Clean, professional finance styling, titled "Meridian Capital
+     Partners".
 
-Make it interactive so I can change the amount and see the result
-update.
-
-Then give me the same converter as a standalone HTML file I can
-download, and in that version fetch the rates live from a free
-no-key API when the page opens, with a Refresh button.
+STEP 3 — Now a SEPARATE downloadable HTML file.
+Save a file called meridian-fx-live.html to my folder. Same design,
+but this one DOES fetch rates from a free no-key API (such as
+open.er-api.com or frankfurter.app) when it opens, with a Refresh
+button and the fetch time shown. Tell me where you saved it.
+Do not show this version as an artefact — it only works when I open
+the file in my own browser.
 ```
 
-> **Note:** An artefact cannot call an external API — that is a sandbox rule, not a bug. Claude looks the rates up for you and builds them in; the downloadable HTML runs in your browser, so it can fetch live.
+> **Note:** The prompt tells Claude NOT to put a fetch in the artefact. If you leave that out, Claude writes one and the artefact shows "Live rate lookup failed" — the sandbox blocks it. Live data belongs in the downloadable HTML, which runs in your own browser.
 
 **Step-by-step**
 
 1. Start a new Cowork session — this lab needs no files.  —  Lab 1 gave Claude a folder to work in; here you are asking it to build something from nothing.
-2. Paste the lab prompt into the composer and send it.  —  Claude writes the code and renders the converter in the preview pane beside the chat.
-3. Try the converter: change the amount and switch the currencies.  —  This is what makes it an artefact rather than an answer — you can interact with it.
-4. Check the rate Claude found against a search for "1 USD to SGD".  —  Claude looked this up while building, so it should match today. The artefact itself cannot call an API — the sandbox blocks outbound requests — so the rate is baked in at build time.
-5. Open the downloaded HTML file in your browser and click Refresh.  —  Same converter, but running in your browser instead of the sandbox, so it CAN fetch live rates. This is the practical difference between an artefact and a file you own.
-6. Ask for one refinement in plain English, for example: Add a thousands separator to the result.  —  Refining by conversation is the normal way to work — you never edit the code yourself.
-7. Save the artefact so it appears in your sidebar.  —  A saved artefact persists as a reusable tool; an unsaved one scrolls away with the chat.
-8. Download a copy of the artefact to your lab folder.  —  Downloading gives you a file you can keep, attach or hand to someone without Claude.
+2. Paste the lab prompt into the composer and send it.  —  It asks for three things in order: look up the rates, build the artefact, then save a separate live HTML file.
+3. Read the three rates Claude reports back in the chat.  —  Claude can search the web; the artefact cannot. This is why the lookup happens here, in the conversation, and not inside the tool.
+4. Try the artefact: change the amount and switch the currencies.  —  It works instantly because the rates are constants in the code — no network call to fail.
+5. Check the artefact's rate against a search for "1 USD to SGD".  —  It should match today, because Claude looked it up minutes ago. The "fixed at build time" line is the honest caveat.
+6. Open the downloaded meridian-fx-live.html in your browser and click Refresh.  —  Same design, but running outside the sandbox, so THIS one really does fetch live rates. That contrast is the lesson.
+7. Ask for one refinement in plain English, for example: Add a thousands separator to the result.  —  Refining by conversation is the normal way to work — you never edit the code yourself.
+8. Save the artefact so it appears in your sidebar.  —  A saved artefact persists as a reusable tool; an unsaved one scrolls away with the chat.
 
 **Test it**
 
-The artefact converts S$10,000 to USD using the rate Claude looked up, and shows a "Rates as at …" line with today's date. The downloaded HTML file opens in your browser, fetches rates itself and updates them when you click Refresh. The artefact appears in your sidebar after saving and still works when reopened.
+The artefact converts S$10,000 to USD with no error, shows the rate used and a "Rates as at … — fixed at build time" line, and the rate matches a live search. Separately, meridian-fx-live.html opens in your browser, fetches its own rates and updates them when you click Refresh. The artefact is saved in your sidebar.
 
 > **Note:** Full commands and screenshots are in labs/lab-02-*.md. Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient.
 
