@@ -3,16 +3,24 @@
 Copy everything in the block below into Claude.
 
 ```text
-Build me a Live Artefact: a currency converter for Meridian Capital Partners.
+Build me a Live Artefact: a currency converter for Meridian Capital
+Partners that uses the LATEST exchange rates, not fixed ones.
 
 Requirements:
 - Convert between SGD, USD, EUR and GBP.
-- Use these fixed demo rates from SGD: USD 0.74, EUR 0.68, GBP 0.58.
-- One amount box, a from-currency and a to-currency selector, and a large result.
-- Show the rate used underneath the result.
-- Clean, professional finance styling. Label it "Meridian Capital Partners".
+- Fetch current rates from a free, no-key exchange rate API each time
+  the artefact is opened, and refresh them when I click a Refresh
+  button.
+- One amount box, a from-currency and a to-currency selector, and a
+  large result.
+- Under the result show the rate used and the time the rates were
+  last fetched.
+- If the rate lookup fails, say so plainly and show the last rate you
+  had rather than a wrong number.
+- Clean, professional finance styling. Label it "Meridian Capital
+  Partners".
 
 Make it interactive so I can change the amount and see the result update.
 ```
 
-> **Note:** Rates are fixed demo values so the lab gives the same answer for everyone.
+> **Note:** Because the rates are live, your figures will differ from the screenshots — that is the point of a Live Artefact.

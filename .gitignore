@@ -9,7 +9,13 @@ Thumbs.db
 .courseware-render.*/
 .qa-render/
 courseware/*.png
-courseware/assets/
+# Generated/source imagery is not shipped, EXCEPT lab output screenshots, which
+# are build INPUTS referenced by a lab's verify_shot. git cannot re-include a
+# file whose parent directory is excluded, so exclude the contents, not the dir.
+courseware/assets/*
+!courseware/assets/screenshots/
+courseware/assets/screenshots/*
+!courseware/assets/screenshots/*.png
 .claude/
 .codex/
 reference/
