@@ -3,24 +3,27 @@
 Copy everything in the block below into Claude.
 
 ```text
-Build me a Live Artefact: a currency converter for Meridian Capital
-Partners that uses the LATEST exchange rates, not fixed ones.
+Two things, in order.
 
-Requirements:
-- Convert between SGD, USD, EUR and GBP.
-- Fetch current rates from a free, no-key exchange rate API each time
-  the artefact is opened, and refresh them when I click a Refresh
-  button.
-- One amount box, a from-currency and a to-currency selector, and a
-  large result.
-- Under the result show the rate used and the time the rates were
-  last fetched.
-- If the rate lookup fails, say so plainly and show the last rate you
-  had rather than a wrong number.
-- Clean, professional finance styling. Label it "Meridian Capital
-  Partners".
+1. Look up today's mid-market exchange rates from SGD to USD, EUR
+   and GBP, and tell me the rates and the date you found them.
 
-Make it interactive so I can change the amount and see the result update.
+2. Build me a Live Artefact: a currency converter for Meridian
+   Capital Partners using exactly those rates.
+   - Convert between SGD, USD, EUR and GBP.
+   - One amount box, a from-currency and a to-currency selector,
+     and a large result.
+   - Under the result show the rate used, and a line saying
+     "Rates as at <the date you looked them up>".
+   - Clean, professional finance styling. Label it "Meridian
+     Capital Partners".
+
+Make it interactive so I can change the amount and see the result
+update.
+
+Then give me the same converter as a standalone HTML file I can
+download, and in that version fetch the rates live from a free
+no-key API when the page opens, with a Refresh button.
 ```
 
-> **Note:** Because the rates are live, your figures will differ from the screenshots — that is the point of a Live Artefact.
+> **Note:** An artefact cannot call an external API — that is a sandbox rule, not a bug. Claude looks the rates up for you and builds them in; the downloadable HTML runs in your browser, so it can fetch live.

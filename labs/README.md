@@ -8,7 +8,7 @@ Every lab after it extends the same scenario, so work through them in order.
 | Lab | Topic | Title | You build |
 |---|---|---|---|
 | 01 | 01 Claude Cowork Fundamentals | [Process a Folder of Invoices](lab-01-invoices-to-csv/INSTRUCTIONS.md) | An invoices_2025.csv summary plus the PDFs filed into YEAR-MONTH folders. |
-| 02 | 01 Claude Cowork Fundamentals | [Your First Live Artefact](lab-02-first-live-artefact/INSTRUCTIONS.md) | A saved, downloaded Live Artefact — an FX converter on live rates. |
+| 02 | 01 Claude Cowork Fundamentals | [Your First Live Artefact](lab-02-first-live-artefact/INSTRUCTIONS.md) | An FX converter as a saved artefact, plus a downloadable HTML version with live rates. |
 | 03 | 01 Claude Cowork Fundamentals | [The Meridian Sales Dashboard](lab-03-sales-dashboard-live-artefact/INSTRUCTIONS.md) | A saved Live Artefact dashboard showing Meridian's FY2025 revenue by desk. |
 | 04 | 02 Tools and Skills | [Connect Google Drive](lab-04-connect-google-drive/INSTRUCTIONS.md) | A working Google Drive connection scoped to the Meridian finance folder. |
 | 05 | 02 Tools and Skills | [Refresh the Dashboard and Send the Summary](lab-05-gmail-summary-delivery/INSTRUCTIONS.md) | An updated dashboard plus an approved quarterly summary email sent to yourself. |
