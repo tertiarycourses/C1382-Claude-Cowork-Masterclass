@@ -18,7 +18,7 @@ An invoices_2025.csv summary plus the PDFs filed into YEAR-MONTH folders.
 
 The files for this lab are in `mock-data/`:
 
-- `2025 Invoices`
+- `2025 Invoices/`
 
 Leave these files unchanged — let Claude write its output elsewhere.
 
@@ -74,7 +74,7 @@ that you think I should check. Do not delete any file.
 9. **Confirm the PDFs now sit in 2025-01 … 2025-12 folders and nothing was deleted.**
    The file dates come from inside each document, so a file named Jan can still be filed by its real invoice date.
 10. **Read Claude's list of flagged items and decide what to do about each.**
-   Claude surfaces the exceptions; you make the call — that is the working relationship this course is teaching.
+    Claude surfaces the exceptions; you make the call — that is the working relationship this course is teaching.
 
 ## Check your work
 

@@ -1,8 +1,9 @@
 # Meridian Capital Partners — Brand Guidelines (internal)
 
 These are the house rules every Meridian report, dashboard and document follows.
-In Lab 7 these rules go into the Claude Project as standing instructions, so
-every chat in the project applies them without being told.
+In Lab 9 these rules go into the Claude Project as standing instructions, so
+every chat in the project applies them without being told. They are the same
+rules embodied in the house template you attached in Lab 8.
 
 ## Colours
 | Use | Colour | Hex |

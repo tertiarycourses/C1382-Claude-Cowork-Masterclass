@@ -1,6 +1,6 @@
 # Claude Cowork Masterclass — Learner Guide
 
-**Course Code:** C1382  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v3.1 · 17 September 2026**
+**Course Code:** C1382  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v3.2 · 18 September 2026**
 
 ## Contents
 
@@ -14,9 +14,12 @@
 - [Topic 02 — Tools and Skills](#topic-02--tools-and-skills)
   - [Lab 4 — Connect Google Drive](#lab-4--connect-google-drive)
   - [Lab 5 — Refresh the Dashboard and Send the Summary](#lab-5--refresh-the-dashboard-and-send-the-summary)
-  - [Lab 6 — Build a /daily-brief Skill](#lab-6--build-a-daily-brief-skill)
-- [Topic 03 — Claude Projects](#topic-03--claude-projects)
-  - [Lab 7 — Build the Meridian Claude Project](#lab-7--build-the-meridian-claude-project)
+  - [Lab 6 — Generate the Meridian Board Deck](#lab-6--generate-the-meridian-board-deck)
+  - [Lab 7 — Build a /daily-brief Skill](#lab-7--build-a-daily-brief-skill)
+  - [Lab 8 — Brand the Board Deck](#lab-8--brand-the-board-deck)
+- [Topic 03 — Claude Projects and Plugins](#topic-03--claude-projects-and-plugins)
+  - [Lab 9 — Build the Meridian Claude Project](#lab-9--build-the-meridian-claude-project)
+  - [Lab 10 — Add the Productivity Plugin](#lab-10--add-the-productivity-plugin)
 - [Wrap-Up](#wrap-up)
 - [Next Steps](#next-steps)
 - [Glossary](#glossary)
@@ -24,7 +27,7 @@
 
 ## Introduction
 
-Claude Cowork is the desktop agent in the Claude family built for people who work with files and reports rather than code. This course teaches it through one continuous scenario: you are on the finance team at Meridian Capital Partners Pte Ltd, and over seven labs you process a year of invoices, build a live sales dashboard, connect it to the firm's data in Google Drive, deliver an approved summary by Gmail, wrap that routine into a reusable daily-brief skill, and finish by gathering everything into one Claude Project your whole team can work from.
+Claude Cowork is the desktop agent in the Claude family built for people who work with files and reports rather than code. This course teaches it through one continuous scenario: you are on the finance team at Meridian Capital Partners Pte Ltd, and over ten labs you process a year of invoices, build a live sales dashboard, connect it to the firm's data in Google Drive, deliver an approved summary by Gmail, have Claude generate the quarterly board deck with a built-in skill, wrap your morning routine and the firm's house style into reusable skills of your own, gather everything into one Claude Project your whole team can work from, and finish by installing a plugin — a toolkit somebody else packaged.
 
 Meridian Capital Partners is a fictitious Singapore-based investment and advisory firm with four revenue desks — Advisory, Asset Management, Private Credit and Corporate Finance. All figures, clients, staff and documents in this course are synthetic and used for training only.
 
@@ -35,8 +38,11 @@ Meridian Capital Partners is a fictitious Singapore-based investment and advisor
 - LO2: Build, save and download a Live Artefact, including an interactive sales dashboard from supplied data.
 - LO3: Connect the Google Drive connector so Claude can read finance data held outside the chat.
 - LO4: Refresh a Live Artefact from connected data and send an approved summary with the Gmail connector.
-- LO5: Turn a verified routine into an Agent Skill with /skill-creator, update it, and explain a skill's three layers.
-- LO6: Assemble a Claude Project that holds the data, instructions, skill and dashboard as one reusable team workspace.
+- LO5: Generate a board-ready deck with real charts from connected data, using a skill Claude loads on demand.
+- LO6: Turn a verified routine into an Agent Skill with /skill-creator, update it, and explain a skill's three layers.
+- LO7: Capture a documented house style as a reusable skill that brands any presentation on command.
+- LO8: Assemble a Claude Project that holds the data, instructions, skills and dashboard as one reusable team workspace.
+- LO9: Install a plugin and explain how a packaged bundle of skills differs from a skill you wrote yourself.
 
 
 ## Before You Start — Preparation
@@ -254,7 +260,7 @@ The dashboard shows total revenue S$24,850,000 and 214 deals, Advisory is the be
 
 ## Topic 02 — Tools and Skills
 
-Google Drive · Gmail · Agent Skills · /skill-creator · a reusable /daily-brief automation
+Tools first — Google Drive and Gmail — then skills: a built-in skill that builds the board deck, and two of your own written with /skill-creator
 
 **Key concepts**
 
@@ -263,6 +269,8 @@ Google Drive · Gmail · Agent Skills · /skill-creator · a reusable /daily-bri
 - ('Scope the folder', 'Point Claude at one Drive folder for the task — not your whole Drive.')
 - ('Gmail', 'Claude drafts, sends, replies and labels — sending asks for explicit approval by default.')
 - ('Agent Skills', 'A folder of instructions Claude loads on demand, so a task runs the same way every time.')
+- ('Built-in skills', 'Some ship with Claude — pptx builds PowerPoint files. It loads when your request matches.')
+- ('Where to see them', 'Your own skills appear in + → Skills. Built-in ones do not — look in the Context panel.')
 - ('Three layers', 'Metadata is always in context; the SKILL.md loads when triggered; resources load only when needed.')
 - ('/skill-creator', 'Do the task once, verify the output, then let skill-creator write the SKILL.md for you.')
 - ('Skills evolve', 'Update a skill as you learn what you want — saving over it replaces the old version, so re-run to confirm.')
@@ -370,23 +378,87 @@ The dashboard shows a Q4 column with actual against target per desk and Q4 reven
 ---
 
 
-### Lab 6 — Build a /daily-brief Skill
+### Lab 6 — Generate the Meridian Board Deck
 
-Learning outcome: turn a routine you have already done into a reusable Agent Skill, and update it.
+Learning outcome: have Claude build a board-ready deck with real charts using a skill it loads on demand.
 
-Goal: Labs 4 and 5 showed what the connectors can do — but you had to describe the whole routine each time. Now you capture it once. The reliable way to build a skill is the Do / Verify / Save pattern: do the task with Claude once, refine until the output is right, then use the /skill-creator skill to save it. You have already done the doing — this lab turns it into a command, then updates it.
+Goal: The quarterly board pack is due. In Lab 5 you sent the head of finance a summary email — the board wants the same story as slides. Rather than building it by hand, you have Claude read the Meridian data from Drive and produce the PowerPoint itself.
+
+This is your first look at a skill doing the work. You do not write anything or turn anything on: Claude has a built-in pptx skill for creating PowerPoint files, and it loads on demand because your request matches what the skill is for. You can watch it happen in the Context panel. It builds the charts too — real, editable PowerPoint charts, not screenshots. In Labs 7 and 8 you write your own skills; here you watch one work first.
 
 **What you'll build**
 
-A daily-brief Agent Skill you can run by name each morning, updated once.   (Tools: Claude Cowork, Agent Skills, /skill-creator, Google Drive connector, Gmail connector.)
+A board-ready PowerPoint with charts and Q4 recommendations, built by Claude's built-in pptx skill.   (Tools: Claude Cowork, Google Drive connector, the built-in pptx skill.)
 
 **The prompt**
 
 Copy the block below into Claude exactly as it is.
 
 ```text
-Step 1 — DO. Run my morning finance briefing for Meridian Capital
-Partners, once, so we can get the format right together:
+Using the Meridian Finance folder in Google Drive, build me a PowerPoint
+called "Meridian Capital Partners — FY2025 Board Review".
+
+Slides:
+1. Title slide with the company name and "FY2025 Board Review".
+2. FY2025 summary — total revenue, total deals, average deal size and
+   the best-performing desk.
+3. Revenue by desk — a bar chart of FY2025 revenue for the four desks,
+   with the figures labelled.
+4. Q4 desk performance — a grouped bar chart of each desk's Q4 actual
+   against its target, plus a line on what the gaps mean.
+5. Recommendation — how to close the Q4 Advisory shortfall.
+6. Recommendation — where to invest next year, based on the strongest
+   and weakest desks.
+
+Use real PowerPoint charts, not pictures of charts, so the numbers stay
+editable. All money in Singapore dollars with thousands separators.
+
+Show me the outline before you build it. When the deck is ready, post the
+.pptx in the chat so I can download it.
+```
+
+> **Note:** Ask for the outline first. It is far cheaper to fix the structure before the slides exist than after.
+
+**Step-by-step**
+
+1. Make sure the Google Drive connector from Lab 4 is still enabled.  —  Drive is where the finance data lives; the deck is built from what Claude reads there.
+2. Paste the lab prompt.  —  Claude reads the figures from Drive and writes the PowerPoint itself — you are not exporting data between tools by hand.
+3. Read the outline Claude proposes and correct it before it builds.  —  Structure is cheap to change now and expensive to change once six slides exist.
+4. Open the Context panel in the sidebar and find `pptx` under Skills.  —  It is there because your request matched what the skill is for — you never named it. The same panel shows your working folder and the connectors that are on: everything currently in Claude's context, in one place.
+5. Let Claude generate the .pptx and download it.  —  The file arrives as a download in the chat, the same way the HTML artefact did in Lab 2.
+6. Open the PowerPoint and read it end to end.  —  A deck you did not write is still a deck you are accountable for.
+7. Click a chart and confirm it is a real PowerPoint chart.  —  Selecting it should offer you the underlying data. A chart you can edit survives the first question from the board; a picture of a chart does not.
+8. Check every figure against the Lab 3 dashboard and the Lab 5 email.  —  FY2025 revenue should read S$24,850,000 and Q4 S$6,980,000 — the same numbers, or something has gone wrong.
+9. Confirm the Advisory recommendation names the target discrepancy rather than averaging it away.  —  The S$90,000 gap between the two files is the one thing the board must not be shown a tidy average of.
+
+**Test it**
+
+The PowerPoint downloads and opens with six slides. FY2025 revenue reads S$24,850,000 across 214 deals, Advisory is the best desk at S$8,420,000, and Q4 totals S$6,980,000 with each desk shown against its target. The revenue-by-desk and Q4-against-target charts are real PowerPoint charts with editable data, not images. One recommendation slide states the S$90,000 Q4 Advisory target discrepancy explicitly.
+
+> **Note:** Full commands and screenshots are in labs/lab-06-*.md. Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient.
+
+---
+
+
+### Lab 7 — Build a /daily-brief Skill
+
+Learning outcome: turn a routine you have already done into a reusable Agent Skill, update it, and schedule it to run itself.
+
+Goal: Labs 4 and 5 showed what the connectors can do, and Lab 6 showed a built-in skill doing the work for you. Now you write one yourself. The reliable way to build a skill is the Do / Verify / Save pattern: do the task with Claude once, refine until the output is right, then use `/skill-creator` to save it. You have already done the doing — this lab turns it into a command, then updates it. Finally you schedule it, so the briefing is waiting as a draft before you sit down rather than something you have to remember to ask for.
+
+**What you'll build**
+
+A daily-brief Agent Skill you can run by name each morning, updated once and scheduled to run itself at 9am.   (Tools: Claude Cowork, Agent Skills, /skill-creator, Google Drive connector, Gmail connector, Scheduled tasks.)
+
+**The prompt**
+
+This lab has three blocks, sent at different times. Blocks 1 and 2 are typed into the chat composer, with a verify step between them. Block 3 goes into the Instructions field of the Create scheduled task dialog rather than into the chat.
+
+Block 1 — DO
+
+```text
+Run my morning finance briefing for Meridian Capital Partners, once,
+so we can get the format right together:
 
 - What changed in the Meridian Finance folder on Google Drive since
   yesterday?
@@ -397,64 +469,189 @@ If a section has nothing in it, say so plainly — "No new files since
 yesterday" — rather than padding it out. End with one line on what most
 needs my attention, or "Nothing urgent — have a good day" if there is
 nothing. All money in Singapore dollars. Draft only — never send email.
-
-Step 2 — SAVE. Once I confirm the output is right, use the
-/skill-creator skill to turn exactly this routine into a skill called
-daily-brief that I can run every morning.
 ```
+
+Now stop and read the output. Ask for changes until the format is right — reorder a section, tighten a heading, fix the fallback wording. Whatever you settle on here is exactly what the skill will reproduce every morning. Do not continue until you are happy with it.
+
+Block 2 — SAVE — type /skill-creator into the composer yourself, select it from the slash-command list, then add this description after it
+
+```text
+/skill-creator Save the morning finance briefing routine we just ran as
+a skill called daily-brief. Keep the three sections in the order we
+settled on, the plain fallback wording for empty sections, the single
+closing attention line, all money in Singapore dollars, and draft-only —
+never send email.
+```
+
+Block 3 — SCHEDULE — this block is pasted into the Instructions field of the Create scheduled task dialog, not typed into the chat
+
+```text
+Run my daily-brief skill for Meridian Capital Partners.
+
+Leave the briefing as a draft email to me in Gmail, with the subject
+"Meridian daily brief" and today's date. Do not send it.
+
+If a section has nothing in it, keep the plain fallback wording rather
+than padding it out.
+```
+
+Notice it names the skill rather than restating the routine — that is what saving the skill bought you. Notice too that it repeats *Do not send it* even though the skill is already draft-only. A scheduled task is the one place you state a safety rule twice: it runs unattended with Permissions set to *Automatically approve*, so both the instruction and the skill carry the constraint.
 
 > **Note:** Do it once, check the output, then save it — that order is what makes the skill reliable.
 
 **Step-by-step**
 
 1. Make sure the Drive and Gmail connectors from Labs 4 and 5 are still enabled.  —  The skill drives those connectors, so it can only work if they are on.
-2. DO — paste Step 1 of the lab prompt and let Claude run the routine once.  —  You are not writing instructions yet; you are doing the task together so Claude sees what good looks like.
+2. DO — send block 1 on its own and let Claude run the routine once.  —  You are not writing instructions yet; you are doing the task together so Claude sees what good looks like.
 3. VERIFY — read the briefing and ask for changes until the format is right.  —  Reorder a section, tighten the wording, fix a heading. Whatever you settle on here is what the skill will reproduce.
 4. Check the fallback wording on any empty section.  —  The fallbacks are what stop the routine inventing filler on a quiet morning — get them right before you save.
 5. Confirm it drafted and did not send anything.  —  A routine you will run unattended must not be able to send mail on its own.
-6. SAVE — run Step 2 so /skill-creator turns the routine into a daily-brief skill.  —  The skill-creator skill writes the SKILL.md for you, from the run you just verified.
+6. SAVE — type `/skill-creator` in the composer, then send block 2.  —  You type the slash command yourself and pick it from the list; it then writes the SKILL.md for you, from the run you just verified.
 7. Read the SKILL.md it produces, especially the description line.  —  The description is how Claude decides whether to load the skill for a future task — make it specific.
-8. Run the skill by name, then run it again.  —  The same structure both times is the payoff: one command instead of re-describing the routine every morning.
+8. Run the skill by typing `/daily-brief`, then run it again.  —  The same structure both times is the payoff: one command instead of re-describing the routine every morning.
 9. UPDATE — ask for one change, such as putting the emails section first.  —  A skill is not written once. You keep refining it as you learn what you actually want each morning.
 10. Save the change under the same skill name and confirm the replace prompt.  —  Claude warns that a skill with this name already exists and that replacing it cannot be undone — read that prompt before you accept it.
-11. Run the skill once more to confirm the change took effect.  —  Always re-run after an update; that is how you know the new version is the one being loaded.
+11. Run `/daily-brief` once more to confirm the change took effect.  —  Always re-run after an update; that is how you know the new version is the one being loaded.
+12. Open Scheduled tasks from the sidebar, choose New task, then Set up manually.  —  The other route, Create with Claude, fills the task in for you by asking questions; setting it up manually shows you every field it will set.
+13. Name the task "Daily briefing".  —  The skill captures WHAT to do; the schedule captures WHEN. Two different kinds of reuse, and this is the second one.
+14. Paste Block 3 into the Instructions field.  —  It names the skill you just built rather than re-describing the routine — that is what saving it bought you. It also repeats "Do not send it", because a scheduled task is the one place you state a safety rule twice.
+15. Point "Work in a project or folder" at the folder you have been working in.  —  The task needs the same working folder and connectors the skill expects.
+16. Set Frequency to run daily at 9:00am.  —  Before you sit down, so the briefing is waiting rather than something you go and fetch.
+17. Read the Permissions setting and understand what "Automatically approve" means.  —  The task will use your connectors unattended, without pausing to ask. This is exactly why the skill drafts and never sends — an unattended task that could send mail is how an unreviewed email reaches a real client.
+18. Decide whether to switch on "Require this computer".  —  On, it only runs while your computer is awake but can reach your local folders; off, it runs without them. Choose to match where the task's data actually lives.
+19. Save the task, then run it once manually to confirm it works.  —  Never leave a scheduled task untested — the first time it runs should not be the morning you are relying on it.
+20. Check Gmail for a draft titled "Meridian daily brief" and confirm nothing was sent.  —  A draft in your Drafts folder and an empty Sent folder is the proof the constraint held.
 
 **Test it**
 
-Running the daily-brief skill by name produces a briefing with all three sections — Drive changes, desks behind target, emails needing a reply — using the plain fallback wording where a section is empty, ending with a single attention line, with all money in SGD and no email sent. After the update, the revised section order appears on the next run — and Claude warned you before replacing the existing skill.
+Running `/daily-brief` produces a briefing with all three sections — Drive changes, desks behind target, emails needing a reply — using the plain fallback wording where a section is empty, ending with a single attention line, with all money in SGD and no email sent. After the update, the revised section order appears on the next run — and Claude warned you before replacing the existing skill. A scheduled task named "Daily briefing" exists, set to run daily at 9:00am, and running it manually leaves a Gmail draft titled "Meridian daily brief" with today's date, while your Sent folder stays empty.
 
-> **Note:** Full commands and screenshots are in labs/lab-06-*.md. Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient.
+> **Note:** Full commands and screenshots are in labs/lab-07-*.md. Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient.
 
 ---
 
 
-## Topic 03 — Claude Projects
+### Lab 8 — Brand the Board Deck
 
-Bringing it together · project knowledge · reusable workspace for the team
+Learning outcome: teach Claude a house style from an example deck and save it as a reusable skill.
+
+Goal: The board deck from Lab 6 has the right numbers and the wrong clothes — it looks like a default template. Meridian has a branded template every deck is supposed to follow; the problem is that applying it by hand, every time, is what nobody does.
+
+So you do not describe the house style to Claude — you hand it the template and let it work the style out for itself. That is how branding actually reaches people in a firm: somebody sends you the template, not a list of hex values. You apply it once, check the result, then save it as a skill so any future deck can be branded by name — the same way you saved `/daily-brief` in Lab 7.
+
+**What you'll build**
+
+A brand-deck Agent Skill that applies the Meridian house style to any presentation.   (Tools: Claude Cowork, Agent Skills, /skill-creator.)
+
+**The prompt**
+
+This lab is sent in two separate messages, not one. Attach both the template and the Lab 6 deck, send block 1, and only send block 2 once the restyled deck looks right.
+
+Block 1 — DO
+
+```text
+I have attached two files.
+
+The first, meridian-brand-template.pptx, is our house template. Study
+it and work out the style it uses: the colours, the fonts for headings
+and body text, how the title slide is treated, the rule under each
+slide title, and what goes in the footer.
+
+The second is the "Meridian Capital Partners — FY2025 Board Review"
+deck I built in the last lab. Apply the template's style to it so the
+two look like the work of the same firm.
+
+Tell me what style rules you took from the template before you apply
+them, so I can check you read it correctly.
+
+This is a restyle only — do not change any figure or any wording.
+Give me the restyled .pptx to download when you are done.
+```
+
+Now stop and look at the deck. Open the restyled deck beside the template and check the title slide and one content slide — they should read as the same firm's work. Ask for changes until it looks right. Whatever you settle on here is what the skill will reproduce.
+
+Block 2 — SAVE — type /skill-creator into the composer yourself, select it from the slash-command list, then add this description after it
+
+```text
+/skill-creator Save what we just did as a skill called brand-deck that
+applies the Meridian house style to any presentation. Write the actual
+colours, fonts, title treatment and footer you took from the template
+into the skill, so it works on a deck later without me attaching the
+template again. Never change figures or wording — restyle only.
+```
+
+The skill records the style values Claude read off the template. That is the point of saving it: from now on the house style travels with the skill, and nobody has to find the template first.
+
+> **Note:** Restyle only. A branding skill that is allowed to touch the numbers is a branding skill that will eventually change one.
+
+**Step-by-step**
+
+1. Attach the template from `mock-data/` and the PowerPoint you downloaded in Lab 6.  —  Claude learns the style from the template and applies it to the deck, so it needs both files in front of it.
+2. DO — send block 1 on its own and let Claude study the template.  —  You are not describing the house style; you are handing over an example and letting Claude read it — which is how a template reaches anyone in a real firm.
+3. Read the style rules Claude says it took from the template before it applies them.  —  If it misread the template, you find out now rather than in the finished deck.
+4. Open the restyled deck beside the template and compare the title slides.  —  Same background, same wordmark treatment, same rule. They should read as the work of one firm.
+5. Check a content slide against the template's content slide.  —  Heading colour and typeface, the rule under the title, the body font, and the footer lockup with the slide number.
+6. Confirm no figure and no wording changed.  —  Compare against the Lab 6 check: S$24,850,000, 214 deals, Q4 S$6,980,000, and the S$90,000 Advisory discrepancy still stated.
+7. VERIFY — ask for changes until the look is right.  —  Whatever you settle on now is what every future deck will inherit.
+8. SAVE — type `/skill-creator` in the composer, then send block 2.  —  You type the slash command yourself and pick it from the list; it writes the SKILL.md from the restyle you just verified.
+9. Read the SKILL.md it produces and check it recorded the actual style values.  —  A skill that says "match the template" needs the template. A skill that names the colours and fonts works on its own — that is what saving it is for.
+10. Attach another deck, type `/brand-deck`, and run it — without attaching the template.  —  The same house style landing on a deck the skill has never seen, with no template in the chat, is the whole point.
+
+**Test it**
+
+The restyled deck downloads and matches the template's look — the same background colours, heading and body typefaces, title treatment, rule under each title and footer lockup with the internal-use line and slide number. Every FY2025 and Q4 figure is unchanged from Lab 6, including the S$90,000 Advisory discrepancy. Running `/brand-deck` on a different presentation, with no template attached, applies the same house style.
+
+> **Note:** Full commands and screenshots are in labs/lab-08-*.md. Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient.
+
+---
+
+
+## Topic 03 — Claude Projects and Plugins
+
+Bringing it together · project knowledge · a reusable workspace for the team · installing a packaged toolkit
 
 **Key concepts**
 
 - ('A Claude Project', 'A dedicated place for ongoing work, where context builds over time instead of resetting each chat.')
 - ('Backed by a folder', 'In Cowork the files and instructions live in a real folder on your computer — you can still open them yourself.')
-- ('Three ways to start', 'Start from scratch, import a project you made in Chat, or point Claude at a folder you already work from.')
+- ('Ways to start', 'Create a new one from scratch, recreate one you run in Chat, or point it at a folder you already work from.')
 - ('Project instructions', 'Standing rules for this body of work — house style, SGD formatting, check before sending.')
-- ('Everything in one place', 'The finance data, the brand rules, your daily-brief skill and the dashboard, together.')
+- ('Context vs Folder', 'Context is what Claude reads and never edits. Folder is where it actually works — reading data and writing output.')
+- ('Everything in one place', 'The finance data, the brand rules, your daily-brief and brand-deck skills and the dashboard, together.')
 - ('Share the folder', 'A colleague opens the same project and inherits the data, rules and tools you set up.')
+- ('Plugins', 'A bundle somebody else packaged — several skills plus the tools they need, installed in one click from Discover.')
+- ('Namespaced commands', "A plugin's commands carry its name: /productivity:start. That prefix is how you tell a bundle's command from one you wrote.")
 
 
-### Lab 7 — Build the Meridian Claude Project
+### Lab 9 — Build the Meridian Claude Project
 
-Learning outcome: assemble the data, instructions, skill and dashboard into one reusable Project.
+Learning outcome: assemble the data, instructions, skills and dashboard into one reusable Project.
 
-Goal: Everything you have built so far lives in separate places — a dashboard in your sidebar, files in Drive, a skill, and rules you have been restating by hand. In this final lab you gather them into one Cowork Project: a dedicated folder on your computer where context builds over time, and which a colleague can open and be immediately productive in.
+Goal: Everything you have built so far lives in separate places — a dashboard in your sidebar, files in Drive, two skills, a scheduled task, and rules you have been restating by hand. In this final lab you gather them into one Cowork Project: a dedicated folder on your computer where context builds over time, and which a colleague can open and be immediately productive in.
+
+The project page has four panels — Instructions, Context, Folder and Scheduled — and you fill each in turn. The one worth pausing on is the difference between Context and Folder: Context holds documents Claude reads and never edits, while Folder is where it actually works.
 
 **What you'll build**
 
-A Meridian Finance Reporting project holding the data, instructions, skill and dashboard.   (Tools: Claude Cowork, Projects, Agent Skills, Live Artefacts, Google Drive connector.)
+A Meridian Finance Reporting project holding the data, instructions, skills and dashboard.   (Tools: Claude Cowork, Projects, Agent Skills, Live Artefacts, Google Drive connector.)
 
 **The prompt**
 
-Copy the block below into Claude exactly as it is.
+This lab has two blocks. Block 1 is pasted into the Create a project dialog as the project is created; block 2 sets the project's standing instructions once it exists.
+
+Block 1 — CREATE — paste this into the "What are you trying to achieve?" box of the Create a project dialog
+
+```text
+Quarterly finance reporting for Meridian Capital Partners Pte Ltd — a
+Singapore investment firm with four desks: Advisory, Asset Management,
+Private Credit and Corporate Finance. I produce revenue dashboards,
+board decks and a daily briefing from the firm's finance data, all in
+Singapore dollars and in the Meridian house style.
+```
+
+This is the standing context every chat in the project inherits, so you stop re-explaining who Meridian is.
+
+Block 2 — INSTRUCTIONS — send this in the project once it exists, to set its standing instructions
 
 ```text
 This project is Meridian Finance Reporting. Write the project
@@ -481,37 +678,87 @@ will now do differently in every chat in this project.
 
 **Step-by-step**
 
-1. In Cowork, choose New project, then Start from scratch.  —  The other two routes on that screen are Import a project (bring one over from Chat) and Use an existing folder (point Claude at a folder you already work from).
-2. In the Start a new project dialog, type the Name: Meridian Finance Reporting.  —  The dialog has four fields — Name, Instructions, Add files and Choose project location.
-3. Paste the lab prompt's rules into the Instructions box.  —  These are the standing rules — house style, SGD formatting and the approval habit — applied to every chat in the project.
-4. Under Add files, drop in the Meridian finance data and the brand guidelines.  —  Adding them once means no chat in this project has to re-attach them.
-5. Set Choose project location to where you want the folder to live, then click Create.  —  A Cowork project is backed by a real folder on your computer — you can open the files yourself at any time.
-6. Add the daily-brief skill from Lab 6 to the project.  —  The routine now travels with the project, so anyone working in it can run it.
-7. Open the project folder on your computer and confirm the files are really there.  —  This is what distinguishes a Cowork project — the instructions and files are a folder you own, not something locked inside the app.
-8. Save the FY2025 dashboard into the project so it sits with the data it reports on.  —  The artefact, its data and its rules finally live in one place.
-9. Start a fresh chat in the project and ask for a one-paragraph Q4 summary.  —  Test the payoff: no files attached, no rules restated, and the output already follows the house style.
-10. Confirm the folder holds the data, instructions, skill and dashboard, ready to share.  —  Handing a colleague this folder hands them the whole working setup.
+1. In Cowork, start a new project to open the Create a project dialog.  —  The dialog asks two questions and offers a folder — it is deliberately short, because the detail is set once the project exists.
+2. Under "What are you working on?", enter: Meridian Finance Reporting.  —  This is the project's name — it is how you will find it in the sidebar later.
+3. Under "What are you trying to achieve?", paste Block 1.  —  This is the standing context every chat in the project inherits, so you stop re-explaining who Meridian is.
+4. Click Create project.  —  The project now exists but is empty. Everything else is added from the project page, which has four panels down the right: Instructions, Context, Folder and Scheduled. You fill them in that order.
+5. INSTRUCTIONS — open the panel and set the standing rules with Block 2.  —  These are the house style, the SGD formatting and the approval habit, applied to every chat in the project. You stop restating them.
+6. CONTEXT — add the brand guidelines, the reporting calendar and the desk profiles.  —  Context holds documents Claude READS. It never edits them — they are reference material, which is why the brand rules and the calendar belong here rather than in the working folder.
+7. FOLDER — point the panel at the working/ folder from this lab's mock data.  —  Folder is where Claude WORKS: it reads the revenue CSV there and writes its output into working/reports/. That read-versus-write split is the difference between the two panels, and it is the part people get wrong.
+8. SCHEDULED — add the 9am daily-brief task you built in Lab 7 to the project.  —  Same feature as Lab 7, now scoped to the project: the task belongs to this body of work rather than floating loose in your account.
+9. Add the daily-brief skill from Lab 7 and the brand-deck skill from Lab 8 to the project.  —  Both routines now travel with the project, so anyone working in it can run them. Type / in the composer to see them listed.
+10. Open the project folder on your computer and confirm the files are really there.  —  This is what distinguishes a Cowork project — the instructions and files are a folder you own, not something locked inside the app.
+11. Save the FY2025 dashboard into the project so it sits with the data it reports on.  —  The artefact, its data and its rules finally live in one place.
+12. Start a fresh chat in the project and ask for a one-paragraph Q4 summary.  —  Test the payoff: no files attached, no rules restated, and the output already follows the house style.
+13. Confirm all four panels are populated and the folder is ready to share.  —  Handing a colleague this folder hands them the whole working setup.
 
 **Test it**
 
-A Meridian Finance Reporting project exists, backed by a folder containing the finance data and brand guidelines, with project instructions set, the daily-brief skill available and the dashboard saved. A brand-new chat in the project produces a Q4 summary in SGD with the correct header and footer without you attaching a file or restating a single rule.
+A Meridian Finance Reporting project exists with all four panels populated: Instructions carries the house rules, Context holds the brand guidelines, reporting calendar and desk profiles, Folder points at the working folder with the FY2025 revenue data, and Scheduled carries the 9am daily-brief task. Both the daily-brief and brand-deck skills are available and the dashboard is saved. A brand-new chat in the project produces a Q4 summary in SGD with the correct header and footer without you attaching a file or restating a single rule.
 
-> **Note:** Full commands and screenshots are in labs/lab-07-*.md. Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient.
+> **Note:** Full commands and screenshots are in labs/lab-09-*.md. Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient.
+
+---
+
+
+### Lab 10 — Add the Productivity Plugin
+
+Learning outcome: install a plugin and tell a packaged bundle apart from a skill you wrote yourself.
+
+Goal: Lab 9 packaged your own setup so a colleague could open it and be productive. This lab runs the same idea in the opposite direction: you install a toolkit somebody else packaged.
+
+That is the difference between a skill and a plugin. A skill is one routine you wrote — `/daily-brief` in Lab 7, `/brand-deck` in Lab 8. A plugin is the whole setup: several skills plus the tools they need, installed together in one click. You use Anthropic's Productivity plugin to track the follow-ups this course has actually generated, inside the Meridian project you just built.
+
+**What you'll build**
+
+The Productivity plugin installed, with a TASKS.md tracking your Meridian follow-ups.   (Tools: Claude Cowork, Plugins, the Productivity plugin.)
+
+**The prompt**
+
+Copy the block below into Claude exactly as it is.
+
+```text
+/productivity:start
+```
+
+> **Note:** This lab has no long prompt to paste — it is driven by the plugin's own commands. Note the `productivity:` prefix: that is how you tell a plugin's command from a skill you wrote.
+
+**Step-by-step**
+
+1. Open the Plugins panel and switch to the Discover tab.  —  The search box covers "skills and plugins" — both live in the same place, which is the first hint that a plugin is a container for skills.
+2. Find the Productivity plugin from Anthropic and click Add.  —  It is described as "Tasks, planning and follow-ups — the everyday toolkit." The card shows the publisher and the install count.
+3. Check Your plugins to confirm it installed.  —  The two tabs separate what you have from what is available — the same split as a package manager.
+4. Type `/` in the composer and find the new `/productivity:` commands.  —  Note the prefix. These came from a bundle, unlike `/daily-brief` which you wrote yourself. That prefix is how you tell at a glance where a command came from.
+5. Open the Meridian project from Lab 9 and run `/productivity:start` there.  —  The plugin works on the project you already built, so the tasks it tracks are real work rather than invented ones.
+6. Answer whatever it asks and let it create the task list.  —  It sets up its task and memory systems for this project the first time you run it.
+7. Open `TASKS.md` in the project folder and read the sections.  —  Active, Waiting On, Someday and Done. Like the project itself, it is a real file you own — not state hidden inside the app.
+8. Add the follow-ups this course actually produced.  —  Chase the S$90,000 Q4 Advisory target discrepancy with Finance; review the FY2025 board deck before it goes to the board; confirm tomorrow's daily brief arrived as a draft. Genuine loose ends from Labs 4-8, which is why this lab can close the course honestly.
+9. Run `/productivity:update` and see it triage.  —  It syncs from any connected source and flags what has gone stale — the maintenance half of a task system, which is the half people skip.
+10. Note what the plugin could also connect to.  —  Asana, Linear, Jira, Monday, ClickUp, Notion, Slack and Microsoft 365. A plugin is how a whole team adopts the same toolkit at once, rather than each person writing their own version of it.
+
+**Test it**
+
+The Productivity plugin appears under Your plugins, and typing `/` lists its `/productivity:` commands alongside the `/daily-brief` and `/brand-deck` skills you wrote. A `TASKS.md` file exists in the Meridian project folder with Active, Waiting On, Someday and Done sections, and it holds at least the three Meridian follow-ups: the Q4 Advisory target discrepancy, the board deck review, and the daily-brief draft check.
+
+> **Note:** Full commands and screenshots are in labs/lab-10-*.md. Use only the supplied mock data and your own test accounts. Never put real client, personal or confidential data into a training exercise, and send lab emails to yourself rather than to a real recipient.
 
 ---
 
 
 ## Wrap-Up
 
-Across seven labs you took one finance scenario from a blank workspace to a branded, connected, reusable dashboard.
+Across ten labs you took one finance scenario from a blank workspace to a branded, connected, reusable set of finance tools.
 
 **What you built**
 
 - A Live Artefact sales dashboard for Meridian Capital, saved and downloaded.
 - A Google Drive connection that feeds the dashboard from the firm's finance data.
 - An approved Gmail summary of the quarter, sent to a test recipient.
+- A board-ready PowerPoint with real charts, generated by Claude's built-in pptx skill.
 - A daily-brief Agent Skill that runs the whole morning routine on one command.
-- A Meridian Finance Reporting Project holding the data, instructions, skill and dashboard.
+- A brand-deck Agent Skill that applies the Meridian house style to any presentation.
+- A Meridian Finance Reporting Project holding the data, instructions, skills and dashboard.
+- The Productivity plugin installed, tracking the follow-ups this course produced.
 
 **The habit to keep**
 

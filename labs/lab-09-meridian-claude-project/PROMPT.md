@@ -1,6 +1,27 @@
-# Lab 07 prompt — Set up the project instructions
+# Lab 09 prompt — Create the project, then set its instructions
 
-Copy everything in the block below into Claude.
+This lab has **two blocks**, used at different moments.
+
+Block 1 is pasted into the **Create a project** dialog while you are making the
+project. Block 2 is the project's standing instructions, set after it exists.
+
+## Block 1 — CREATE
+
+In the Create a project dialog, under **What are you trying to achieve?**, paste this:
+
+```text
+Quarterly finance reporting for Meridian Capital Partners Pte Ltd — a
+Singapore investment firm with four desks: Advisory, Asset Management,
+Private Credit and Corporate Finance. I produce revenue dashboards,
+board decks and a daily briefing from the firm's finance data, all in
+Singapore dollars and in the Meridian house style.
+```
+
+This is the standing context every chat in the project inherits, so you stop re-explaining who Meridian is.
+
+## Block 2 — INSTRUCTIONS
+
+Once the project exists, open its instructions and send this in the project:
 
 ```text
 This project is Meridian Finance Reporting. Write the project

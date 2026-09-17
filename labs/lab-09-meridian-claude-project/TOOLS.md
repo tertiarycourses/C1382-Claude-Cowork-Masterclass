@@ -1,6 +1,6 @@
-# Lab 07 — tools
+# Lab 09 — tools
 
-This lab uses the following, all within Topic 03 (Claude Projects):
+This lab uses the following, all within Topic 03 (Claude Projects and Plugins):
 
 - **Claude Cowork**
 - **Projects**
