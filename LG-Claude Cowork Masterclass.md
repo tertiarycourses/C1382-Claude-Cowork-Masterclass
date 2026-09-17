@@ -117,66 +117,16 @@ that you think I should check. Do not delete any file.
 
 **Step-by-step**
 
-1. Open the Claude desktop app, sign in, and choose Cowork in the sidebar.
-
-   ```bash
-   Cowork is a desktop feature on a paid plan — the browser version cannot reach your files.
-   ```
-
-2. Copy the lab's "2025 Invoices" folder somewhere you can work on it.
-
-   ```bash
-   Always run a file-moving task against a copy the first time, so a mistake costs nothing.
-   ```
-
-3. Open the folder yourself and skim it before you start — 126 files.
-
-   ```bash
-   Two have machine-generated names and one looks like a duplicate. You cannot check 126 documents by hand, but you can check that the summary adds up.
-   ```
-
-4. Start a Cowork session pointed at that folder, then paste the lab prompt.
-
-   ```bash
-   Cowork needs access to the folder itself, not an attachment, because it must move files as well as read them.
-   ```
-
-5. Let Claude work through the PDFs — this one takes a few minutes.
-
-   ```bash
-   It is reading each document, not guessing from the filename, which is why the oddly-named files still land correctly.
-   ```
-
-6. Open invoices_2025.csv and check the row count against the folder.
-
-   ```bash
-   Expect 121 invoice rows — 117 in SGD and 4 in USD — with the receipts and the duplicate flagged rather than silently mixed in.
-   ```
-
-7. Total the SGD column and compare it against S$777,954.81.
-
-   ```bash
-   Spot-check a few rows against the PDFs too: a total that reconciles tells you the extraction held across all 126 files.
-   ```
-
-8. Check the currency column — four invoices are in US dollars.
-
-   ```bash
-   Never sum a mixed-currency column. This is exactly the kind of thing a human check is for.
-   ```
-
-9. Confirm the PDFs now sit in 2025-01 … 2025-12 folders and nothing was deleted.
-
-   ```bash
-   The file dates come from inside each document, so a file named Jan can still be filed by its real invoice date.
-   ```
-
-10. Read Claude's list of flagged items and decide what to do about each.
-
-   ```bash
-   Claude surfaces the exceptions; you make the call — that is the working relationship this course is teaching.
-   ```
-
+1. Open the Claude desktop app, sign in, and choose Cowork in the sidebar.  —  Cowork is a desktop feature on a paid plan — the browser version cannot reach your files.
+2. Copy the lab's "2025 Invoices" folder somewhere you can work on it.  —  Always run a file-moving task against a copy the first time, so a mistake costs nothing.
+3. Open the folder yourself and skim it before you start — 126 files.  —  Two have machine-generated names and one looks like a duplicate. You cannot check 126 documents by hand, but you can check that the summary adds up.
+4. Start a Cowork session pointed at that folder, then paste the lab prompt.  —  Cowork needs access to the folder itself, not an attachment, because it must move files as well as read them.
+5. Let Claude work through the PDFs — this one takes a few minutes.  —  It is reading each document, not guessing from the filename, which is why the oddly-named files still land correctly.
+6. Open invoices_2025.csv and check the row count against the folder.  —  Expect 121 invoice rows — 117 in SGD and 4 in USD — with the receipts and the duplicate flagged rather than silently mixed in.
+7. Total the SGD column and compare it against S$777,954.81.  —  Spot-check a few rows against the PDFs too: a total that reconciles tells you the extraction held across all 126 files.
+8. Check the currency column — four invoices are in US dollars.  —  Never sum a mixed-currency column. This is exactly the kind of thing a human check is for.
+9. Confirm the PDFs now sit in 2025-01 … 2025-12 folders and nothing was deleted.  —  The file dates come from inside each document, so a file named Jan can still be filed by its real invoice date.
+10. Read Claude's list of flagged items and decide what to do about each.  —  Claude surfaces the exceptions; you make the call — that is the working relationship this course is teaching.
 
 **Test it**
 
@@ -218,42 +168,12 @@ Make it interactive so I can change the amount and see the result update.
 
 **Step-by-step**
 
-1. Start a new Cowork session — this lab needs no files.
-
-   ```bash
-   Lab 1 gave Claude a folder to work in; here you are asking it to build something from nothing.
-   ```
-
-2. Paste the lab prompt into the composer and send it.
-
-   ```bash
-   Claude writes the code and renders the converter in the preview pane beside the chat.
-   ```
-
-3. Try the converter: change the amount and switch the currencies.
-
-   ```bash
-   This is what makes it an artefact rather than an answer — you can interact with it.
-   ```
-
-4. Ask for one refinement in plain English, for example: Add a thousands separator to the result.
-
-   ```bash
-   Refining by conversation is the normal way to work — you never edit the code yourself.
-   ```
-
-5. Save the artefact so it appears in your sidebar.
-
-   ```bash
-   A saved artefact persists as a reusable tool; an unsaved one scrolls away with the chat.
-   ```
-
-6. Download a copy of the artefact to your lab folder.
-
-   ```bash
-   Downloading gives you a file you can keep, attach or hand to someone without Claude.
-   ```
-
+1. Start a new Cowork session — this lab needs no files.  —  Lab 1 gave Claude a folder to work in; here you are asking it to build something from nothing.
+2. Paste the lab prompt into the composer and send it.  —  Claude writes the code and renders the converter in the preview pane beside the chat.
+3. Try the converter: change the amount and switch the currencies.  —  This is what makes it an artefact rather than an answer — you can interact with it.
+4. Ask for one refinement in plain English, for example: Add a thousands separator to the result.  —  Refining by conversation is the normal way to work — you never edit the code yourself.
+5. Save the artefact so it appears in your sidebar.  —  A saved artefact persists as a reusable tool; an unsaved one scrolls away with the chat.
+6. Download a copy of the artefact to your lab folder.  —  Downloading gives you a file you can keep, attach or hand to someone without Claude.
 
 **Test it**
 
@@ -298,48 +218,13 @@ Use a clean, professional finance layout. Title it
 
 **Step-by-step**
 
-1. Open the lab folder and look at meridian-sales-fy2025.csv so you know what the data holds.
-
-   ```bash
-   Always know your source before you ask Claude to summarise it — that is how you spot a wrong figure later.
-   ```
-
-2. Start a Cowork session and attach the CSV, or point Claude at the lab folder.
-
-   ```bash
-   Scope Claude to the one folder for this task rather than your whole drive.
-   ```
-
-3. Paste the lab prompt and send it.
-
-   ```bash
-   Claude reads the file, works out the totals and builds the dashboard in the preview pane.
-   ```
-
-4. Check the KPI tiles against the CSV: total revenue should be S$24,850,000 across 214 deals.
-
-   ```bash
-   This is the verification habit — read the artefact's numbers back against the source.
-   ```
-
-5. Use the desk filter to view Advisory on its own, then return to all desks.
-
-   ```bash
-   Interactivity is the point of a Live Artefact: the reader explores instead of asking you for another cut.
-   ```
-
-6. Refine the layout in plain English, for example: Move the KPI tiles above the chart.
-
-   ```bash
-   Keep refining by conversation until the dashboard reads the way you want it to.
-   ```
-
-7. Save the dashboard to your sidebar with a clear name, then download a copy.
-
-   ```bash
-   You will refresh this same artefact from connected data in Lab 5.
-   ```
-
+1. Open the lab folder and look at meridian-sales-fy2025.csv so you know what the data holds.  —  Always know your source before you ask Claude to summarise it — that is how you spot a wrong figure later.
+2. Start a Cowork session and attach the CSV, or point Claude at the lab folder.  —  Scope Claude to the one folder for this task rather than your whole drive.
+3. Paste the lab prompt and send it.  —  Claude reads the file, works out the totals and builds the dashboard in the preview pane.
+4. Check the KPI tiles against the CSV: total revenue should be S$24,850,000 across 214 deals.  —  This is the verification habit — read the artefact's numbers back against the source.
+5. Use the desk filter to view Advisory on its own, then return to all desks.  —  Interactivity is the point of a Live Artefact: the reader explores instead of asking you for another cut.
+6. Refine the layout in plain English, for example: Move the KPI tiles above the chart.  —  Keep refining by conversation until the dashboard reads the way you want it to.
+7. Save the dashboard to your sidebar with a clear name, then download a copy.  —  You will refresh this same artefact from connected data in Lab 5.
 
 **Test it**
 
@@ -398,48 +283,13 @@ List anything that looks inconsistent between the files.
 
 **Step-by-step**
 
-1. Upload the lab's mock-data files to a new Google Drive folder named Meridian Finance.
-
-   ```bash
-   The lab supplies the quarterly workbook, the desk targets and the client list as mock data.
-   ```
-
-2. In Claude, click the plus sign in the composer and hover over Connectors.
-
-   ```bash
-   This is where you turn individual connectors on and off for your account.
-   ```
-
-3. Toggle Google Drive on and sign in to your Google account.
-
-   ```bash
-   On a Team or Enterprise plan an owner must enable connectors for the organisation first.
-   ```
-
-4. Approve the permissions Google asks for.
-
-   ```bash
-   Approve only what you are willing to let Claude reach — you can revoke access later.
-   ```
-
-5. Paste the lab prompt so Claude reads the Meridian Finance folder.
-
-   ```bash
-   Naming the folder scopes the task; Claude does not need access to your whole Drive.
-   ```
-
-6. Compare Claude's file summary against what you actually uploaded.
-
-   ```bash
-   Confirm it found every file and read the right periods before you rely on it.
-   ```
-
-7. Note any inconsistency Claude reports between the files.
-
-   ```bash
-   The Q4 Advisory target deliberately disagrees between two files — a real check.
-   ```
-
+1. Upload the lab's mock-data files to a new Google Drive folder named Meridian Finance.  —  The lab supplies the quarterly workbook, the desk targets and the client list as mock data.
+2. In Claude, click the plus sign in the composer and hover over Connectors.  —  This is where you turn individual connectors on and off for your account.
+3. Toggle Google Drive on and sign in to your Google account.  —  On a Team or Enterprise plan an owner must enable connectors for the organisation first.
+4. Approve the permissions Google asks for.  —  Approve only what you are willing to let Claude reach — you can revoke access later.
+5. Paste the lab prompt so Claude reads the Meridian Finance folder.  —  Naming the folder scopes the task; Claude does not need access to your whole Drive.
+6. Compare Claude's file summary against what you actually uploaded.  —  Confirm it found every file and read the right periods before you rely on it.
+7. Note any inconsistency Claude reports between the files.  —  The Q4 Advisory target deliberately disagrees between two files — a real check.
 
 **Test it**
 
@@ -486,48 +336,13 @@ Show me the draft. Do not send it until I approve it.
 
 **Step-by-step**
 
-1. Reopen the dashboard you saved in Lab 3 from your sidebar.
-
-   ```bash
-   You are extending the artefact you already built, not starting a new one.
-   ```
-
-2. Enable the Gmail connector from the plus menu, alongside Google Drive.
-
-   ```bash
-   Turn on only the connectors this task needs.
-   ```
-
-3. Paste the lab prompt, replacing the placeholder with your own email address.
-
-   ```bash
-   Class exercises always go to a test recipient — yourself.
-   ```
-
-4. Watch Claude refresh the dashboard from Drive and add the Q4 target comparison.
-
-   ```bash
-   The data comes from the connector now; you are not attaching files by hand.
-   ```
-
-5. Check the refreshed dashboard: Q4 revenue should be S$6,980,000 across the four desks.
-
-   ```bash
-   Verify the artefact before you let it feed an email to your head of finance.
-   ```
-
-6. Read the drafted email in full and compare every figure against the dashboard.
-
-   ```bash
-   Claude asks for explicit approval before sending — this is the moment to use it.
-   ```
-
-7. Approve the send, then confirm the message arrived in your own inbox.
-
-   ```bash
-   Approve only once the figures match; if anything is wrong, ask for a correction first.
-   ```
-
+1. Reopen the dashboard you saved in Lab 3 from your sidebar.  —  You are extending the artefact you already built, not starting a new one.
+2. Enable the Gmail connector from the plus menu, alongside Google Drive.  —  Turn on only the connectors this task needs.
+3. Paste the lab prompt, replacing the placeholder with your own email address.  —  Class exercises always go to a test recipient — yourself.
+4. Watch Claude refresh the dashboard from Drive and add the Q4 target comparison.  —  The data comes from the connector now; you are not attaching files by hand.
+5. Check the refreshed dashboard: Q4 revenue should be S$6,980,000 across the four desks.  —  Verify the artefact before you let it feed an email to your head of finance.
+6. Read the drafted email in full and compare every figure against the dashboard.  —  Claude asks for explicit approval before sending — this is the moment to use it.
+7. Approve the send, then confirm the message arrived in your own inbox.  —  Approve only once the figures match; if anything is wrong, ask for a correction first.
 
 **Test it**
 
@@ -575,72 +390,17 @@ daily-brief that I can run every morning.
 
 **Step-by-step**
 
-1. Make sure the Drive and Gmail connectors from Labs 4 and 5 are still enabled.
-
-   ```bash
-   The skill drives those connectors, so it can only work if they are on.
-   ```
-
-2. DO — paste Step 1 of the lab prompt and let Claude run the routine once.
-
-   ```bash
-   You are not writing instructions yet; you are doing the task together so Claude sees what good looks like.
-   ```
-
-3. VERIFY — read the briefing and ask for changes until the format is right.
-
-   ```bash
-   Reorder a section, tighten the wording, fix a heading. Whatever you settle on here is what the skill will reproduce.
-   ```
-
-4. Check the fallback wording on any empty section.
-
-   ```bash
-   The fallbacks are what stop the routine inventing filler on a quiet morning — get them right before you save.
-   ```
-
-5. Confirm it drafted and did not send anything.
-
-   ```bash
-   A routine you will run unattended must not be able to send mail on its own.
-   ```
-
-6. SAVE — run Step 2 so /skill-creator turns the routine into a daily-brief skill.
-
-   ```bash
-   The skill-creator skill writes the SKILL.md for you, from the run you just verified.
-   ```
-
-7. Read the SKILL.md it produces, especially the description line.
-
-   ```bash
-   The description is how Claude decides whether to load the skill for a future task — make it specific.
-   ```
-
-8. Run the skill by name, then run it again.
-
-   ```bash
-   The same structure both times is the payoff: one command instead of re-describing the routine every morning.
-   ```
-
-9. UPDATE — ask for one change, such as putting the emails section first.
-
-   ```bash
-   A skill is not written once. You keep refining it as you learn what you actually want each morning.
-   ```
-
-10. Save the change under the same skill name and confirm the replace prompt.
-
-   ```bash
-   Claude warns that a skill with this name already exists and that replacing it cannot be undone — read that prompt before you accept it.
-   ```
-
-11. Run the skill once more to confirm the change took effect.
-
-   ```bash
-   Always re-run after an update; that is how you know the new version is the one being loaded.
-   ```
-
+1. Make sure the Drive and Gmail connectors from Labs 4 and 5 are still enabled.  —  The skill drives those connectors, so it can only work if they are on.
+2. DO — paste Step 1 of the lab prompt and let Claude run the routine once.  —  You are not writing instructions yet; you are doing the task together so Claude sees what good looks like.
+3. VERIFY — read the briefing and ask for changes until the format is right.  —  Reorder a section, tighten the wording, fix a heading. Whatever you settle on here is what the skill will reproduce.
+4. Check the fallback wording on any empty section.  —  The fallbacks are what stop the routine inventing filler on a quiet morning — get them right before you save.
+5. Confirm it drafted and did not send anything.  —  A routine you will run unattended must not be able to send mail on its own.
+6. SAVE — run Step 2 so /skill-creator turns the routine into a daily-brief skill.  —  The skill-creator skill writes the SKILL.md for you, from the run you just verified.
+7. Read the SKILL.md it produces, especially the description line.  —  The description is how Claude decides whether to load the skill for a future task — make it specific.
+8. Run the skill by name, then run it again.  —  The same structure both times is the payoff: one command instead of re-describing the routine every morning.
+9. UPDATE — ask for one change, such as putting the emails section first.  —  A skill is not written once. You keep refining it as you learn what you actually want each morning.
+10. Save the change under the same skill name and confirm the replace prompt.  —  Claude warns that a skill with this name already exists and that replacing it cannot be undone — read that prompt before you accept it.
+11. Run the skill once more to confirm the change took effect.  —  Always re-run after an update; that is how you know the new version is the one being loaded.
 
 **Test it**
 
@@ -704,66 +464,16 @@ will now do differently in every chat in this project.
 
 **Step-by-step**
 
-1. In Cowork, choose New project, then Start from scratch.
-
-   ```bash
-   The other two routes on that screen are Import a project (bring one over from Chat) and Use an existing folder (point Claude at a folder you already work from).
-   ```
-
-2. In the Start a new project dialog, type the Name: Meridian Finance Reporting.
-
-   ```bash
-   The dialog has four fields — Name, Instructions, Add files and Choose project location.
-   ```
-
-3. Paste the lab prompt's rules into the Instructions box.
-
-   ```bash
-   These are the standing rules — house style, SGD formatting and the approval habit — applied to every chat in the project.
-   ```
-
-4. Under Add files, drop in the Meridian finance data and the brand guidelines.
-
-   ```bash
-   Adding them once means no chat in this project has to re-attach them.
-   ```
-
-5. Set Choose project location to where you want the folder to live, then click Create.
-
-   ```bash
-   A Cowork project is backed by a real folder on your computer — you can open the files yourself at any time.
-   ```
-
-6. Add the daily-brief skill from Lab 6 to the project.
-
-   ```bash
-   The routine now travels with the project, so anyone working in it can run it.
-   ```
-
-7. Open the project folder on your computer and confirm the files are really there.
-
-   ```bash
-   This is what distinguishes a Cowork project — the instructions and files are a folder you own, not something locked inside the app.
-   ```
-
-8. Save the FY2025 dashboard into the project so it sits with the data it reports on.
-
-   ```bash
-   The artefact, its data and its rules finally live in one place.
-   ```
-
-9. Start a fresh chat in the project and ask for a one-paragraph Q4 summary.
-
-   ```bash
-   Test the payoff: no files attached, no rules restated, and the output already follows the house style.
-   ```
-
-10. Confirm the folder holds the data, instructions, skill and dashboard, ready to share.
-
-   ```bash
-   Handing a colleague this folder hands them the whole working setup.
-   ```
-
+1. In Cowork, choose New project, then Start from scratch.  —  The other two routes on that screen are Import a project (bring one over from Chat) and Use an existing folder (point Claude at a folder you already work from).
+2. In the Start a new project dialog, type the Name: Meridian Finance Reporting.  —  The dialog has four fields — Name, Instructions, Add files and Choose project location.
+3. Paste the lab prompt's rules into the Instructions box.  —  These are the standing rules — house style, SGD formatting and the approval habit — applied to every chat in the project.
+4. Under Add files, drop in the Meridian finance data and the brand guidelines.  —  Adding them once means no chat in this project has to re-attach them.
+5. Set Choose project location to where you want the folder to live, then click Create.  —  A Cowork project is backed by a real folder on your computer — you can open the files yourself at any time.
+6. Add the daily-brief skill from Lab 6 to the project.  —  The routine now travels with the project, so anyone working in it can run it.
+7. Open the project folder on your computer and confirm the files are really there.  —  This is what distinguishes a Cowork project — the instructions and files are a folder you own, not something locked inside the app.
+8. Save the FY2025 dashboard into the project so it sits with the data it reports on.  —  The artefact, its data and its rules finally live in one place.
+9. Start a fresh chat in the project and ask for a one-paragraph Q4 summary.  —  Test the payoff: no files attached, no rules restated, and the output already follows the house style.
+10. Confirm the folder holds the data, instructions, skill and dashboard, ready to share.  —  Handing a colleague this folder hands them the whole working setup.
 
 **Test it**
 
