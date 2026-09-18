@@ -1,6 +1,6 @@
 # Claude Cowork Masterclass — Learner Guide
 
-**Course Code:** C1382  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v4.1 · 18 September 2026**
+**Course Code:** C1382  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v4.2 · 18 September 2026**
 
 ## Contents
 

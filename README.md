@@ -8,7 +8,7 @@ Process a year of invoices, build a live sales dashboard, connect Google Drive a
 | Programme | Non-WSQ |
 | Duration | 1 day, 7.5 hours |
 | Registration | [View course details and register](https://www.tertiarycourses.com.sg/claude-cowork-masterclass.html) |
-| Courseware | Version 3.2, 18 September 2026 |
+| Courseware | Version 4.2, 18 September 2026 |
 
 ## About the course
 
@@ -56,8 +56,8 @@ Topic 2 runs in two halves. Labs 4 and 5 are the **tools** demo — connectors r
 ## Courseware
 
 - [Learner Guide](LG-Claude%20Cowork%20Masterclass.md)
-- [PowerPoint deck](courseware/Claude%20Cowork%20Masterclass-v3.2.pptx)
-- [Slide PDF](courseware/Claude%20Cowork%20Masterclass-v3.2.pdf)
+- [PowerPoint deck](courseware/Claude%20Cowork%20Masterclass-v4.2.pptx)
+- [Slide PDF](courseware/Claude%20Cowork%20Masterclass-v4.2.pdf)
 - [Learner Guide PDF](courseware/LG-Claude%20Cowork%20Masterclass.pdf)
 - [Lesson Plan PDF](courseware/LP-Claude%20Cowork%20Masterclass.pdf)
 

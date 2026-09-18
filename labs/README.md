@@ -5,6 +5,10 @@ Meridian Capital Partners is a fictitious Singapore-based investment and advisor
 Ten labs, one continuous build, opening with Process a Folder of Invoices.
 Every lab after it extends the same scenario, so work through them in order.
 
+Lab 3b is an optional extra on the same footing as Lab 3: where Lab 3 uses an
+artefact to **show** data, Lab 3b uses one to **collect** it, filling a real
+4-page insurance PDF. Nothing later depends on it, so skip it if time is short.
+
 Topic 02 runs in two halves. Labs 4 and 5 are the **tools** demo — connectors
 reaching data outside the chat. Labs 6, 7 and 8 are the **skills** demo: Lab 6
 watches a built-in skill do the work, then Labs 7 and 8 use `/skill-creator` to
@@ -19,6 +23,7 @@ packaged. Same idea, opposite direction.
 | 01 | 01 Claude Cowork Fundamentals | [Process a Folder of Invoices](lab-01-invoices-to-csv/INSTRUCTIONS.md) | An invoices_2025.csv summary plus the PDFs filed into YEAR-MONTH folders. |
 | 02 | 01 Claude Cowork Fundamentals | [Your First Live Artefact](lab-02-first-live-artefact/INSTRUCTIONS.md) | An FX converter as a saved artefact, plus a downloadable HTML version with live rates. |
 | 03 | 01 Claude Cowork Fundamentals | [The Meridian Sales Dashboard](lab-03-sales-dashboard-live-artefact/INSTRUCTIONS.md) | A saved Live Artefact dashboard showing Meridian's FY2025 revenue by desk. |
+| 03b | 01 Claude Cowork Fundamentals | [Fill a Claim Form from an Artefact](lab-03b-claim-form-artefact/INSTRUCTIONS.md) | A claim-form artefact that collects the answers, plus a genuinely filled claimants-statement-FILLED.pdf. |
 | 04 | 02 Tools and Skills | [Connect Google Drive](lab-04-connect-google-drive/INSTRUCTIONS.md) | A working Google Drive connection scoped to the Meridian finance folder. |
 | 05 | 02 Tools and Skills | [Refresh the Dashboard and Send the Summary](lab-05-gmail-summary-delivery/INSTRUCTIONS.md) | An updated dashboard plus an approved quarterly summary email sent to yourself. |
 | 06 | 02 Tools and Skills | [Generate the Meridian Board Deck](lab-06-meridian-board-deck/INSTRUCTIONS.md) | A board-ready PowerPoint with charts and Q4 recommendations, built by Claude's built-in pptx skill. |
@@ -35,6 +40,8 @@ packaged. Same idea, opposite direction.
 - `CHECKLIST.md` — tick off each step as you go.
 - `mock-data/` — the synthetic Meridian files the lab uses (where applicable).
 - `outputs/` — save your finished work here.
+
+Lab 3b also carries a `FIELD-MAP.md` — the verified PDF field map, for the trainer.
 
 ## Ground rules
 
